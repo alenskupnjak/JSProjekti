@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 80%;
+  background: #333;
+  /* background: url('https://source.unsplash.com/random/560x560'); */
+  background: url('nature.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  overflow: hidden; /* nema scrolbars*/
+}
+
+.container {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
+  color: #fff;
+}
+
+.prekrivalo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+h1,
+h2 {
+  font-weight: 200;
+  margin: 0.4rem;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #aaa;
+}
+
+/* cursor  */
+.txt-type .txt {
+  border-right: 0.2rem solid blue;
+}
+
+@media (min-width: 1200px) {
+  /* primjeniti ce se na sve vece OD 1200px*/
+  h1 {
+    font-size: 8rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 800px) {
+  /* primjeniti ce se na sve DO 800px*/
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  /* primjeniti ce se na sve DO 800px*/
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}
