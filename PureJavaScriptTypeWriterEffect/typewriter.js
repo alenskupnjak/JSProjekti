@@ -39,7 +39,7 @@ Tipkac.prototype.type = function () {
   }
 
   // If word is complete
-  if (this.txt === fullTxt) {
+  if (!this.isDeleting && this.txt === fullTxt) {
     // Make pause at end
     typeSpeed = this.cekajNaKrajuRijeci;
     // Set delete to true
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
   const txtElement = document.querySelector('.txt-type');
   const poljeRijeci = JSON.parse(txtElement.getAttribute('data-words'));
-  const cekajNaKrajuRijeci = txtElement.getAttribute('data-cekajNaKrajuRijeci');
+  const cekajNaKrajuRijeci = txtElement.getAttribute('data-wait');
 
   // Inisijalno pokretanje, saljemo u beskonačnu petlju
   // new Tipkac(txtElement, poljeRijeci, cekajNaKrajuRijeci);
