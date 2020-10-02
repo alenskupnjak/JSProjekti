@@ -4,18 +4,21 @@ document.getElementById('smanji');
 // selektiraj sve btn-e
 
 const value = document.querySelector('#value');
+// isto
+const valuepokus = document.getElementById('value');
+
+// console.log(value, valuepokus);
+
 
 const btns = document.querySelectorAll('.btn');
 
 btns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
-    console.log(e.currentTarget.classList);
+    console.log('xx',e.currentTarget.classList);
     const style = e.currentTarget.classList;
 
     if (style.contains('smanji')) {
-      console.log('prosao');
       brojac--; // ili let -=1
-      console.log(brojac);
       value.textContent = brojac;
     } else if (style.contains('reset')) {
       brojac = 0;
