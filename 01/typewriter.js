@@ -137,7 +137,10 @@ function init() {
   const poljeRijeci = JSON.parse(txtElement.getAttribute('data-words'));
   const cekajNaKrajuRijeci = txtElement.getAttribute('data-wait');
 
-  // Inisijalno pokretanje, saljemo u beskonačnu petlju
+  // Inicijalno pokretanje, saljemo u beskonačnu petlju
+  //function
   // new Tipkac(txtElement, poljeRijeci, cekajNaKrajuRijeci);
+
+  // class
   new TypeWriter(txtElement, poljeRijeci, cekajNaKrajuRijeci);
 }
