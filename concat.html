@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONCAT</title>
+</head>
+
+<body>
+  <h1>CONCAT</h1>
+
+</body>
+<script>
+
+  let polje = ['sport', 'Cooking', 'slon', 'macka', 'mis', 'Mirela', 'Ema'];
+  let testResults = [];
+  testResults.push(7);
+
+  console.log('************* L 190  CONCAT radi kopiju *******************')
+  let storedResults_CONCAT = testResults.concat([3.99, 2]);
+  console.log('Početno polje= ' + testResults)
+  console.log('Rzultat = ' + storedResults_CONCAT)
+  storedResults_CONCAT = storedResults_CONCAT.concat(polje);
+  console.log(storedResults_CONCAT)
+
+
+</script>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>restParameters</title>
+
+
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    function isFullAge55() {
+        console.log(arguments);
+        var argsArr = Array.prototype.slice.call(arguments);
+        console.log(argsArr);
+
+        argsArr.forEach(function (cur) {
+            console.log((2016 - cur) >= 18);
+        })
+    }
+    isFullAge55(1990, 1999, 1965, 2016, 1987);
+
+
+    //ES6
+    function isFullAge6(...data) {
+        data.forEach(cur => console.log((2016 - cur) >= 18));
+    }
+    isFullAge6(1990, 1999, 1965, 2016, 1987);
+
+
+    //ES5
+    function isFullAgeTT(limit) {
+        console.log(arguments);
+        var argsArr = Array.prototype.slice.call(arguments, 1);
+
+        argsArr.forEach(function (cur) {
+            console.log((2016 - cur) >= limit, 2016 - cur );
+        })
+    }
+    isFullAgeTT(10, 1999, 1965, 2016, 1987);
+
+
+    //ES6 **************
+    function isFullAgeES6 (limit, ...years) {
+        years.forEach(cur => {
+            console.log((2016 - cur) >= limit, 2016 - cur)
+    });
+    }
+    isFullAgeES6(21, 1990, 1999, 1965, 2016, 1987);
+
+
+
+
+</script>
+
+</html>

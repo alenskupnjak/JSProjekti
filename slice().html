@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Slice</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    /*
+    The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified
+    */
+
+console.log('************* L 189  slice() radi kopiju *******************')
+const testResults = [1, 2, 3, 4, 5, 6, 10.99, 17];
+const storedResultsPoz = testResults.slice(2);
+const storedResultsneg = testResults.slice(-3,-1);
+
+console.log('testResults =' + testResults );
+console.log('testResults.slice(2) =' + storedResultsPoz);
+console.log('testResults.slice(2,4) =' + testResults.slice(2, 4));
+console.log('testResults.slice(-3,-1) = '+ storedResultsneg);
+
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log('animals= ' + animals);
+
+console.log( 'animals.slice(2) =' + animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+
+console.log('animals.slice(2, 4) =' + animals.slice(2, 4));
+// expected output: Array ["camel", "duck"]
+
+console.log('animals.slice(1, 5) =' + animals.slice(1, 5));
+// expected output: Array ["bison", "camel", "duck", "elephant"]
+
+// polje = [2, 4, 8, 12, -2, 77, 16]
+polje = [2, 4, 8]
+
+console.log('polje= ' + polje);
+console.log('polje.slice(1,1) = ' + polje.slice(1,1));
+console.log('polje.slice(1,2) = ' + polje.slice(1,2));
+console.log('polje.slice(2,5) = ' + polje.slice(2,5));
+console.log('polje= ' + polje);
+
+
+
+      // [2,4,8] splice(1, 2) -> returns [4, 8], original array is [2]
+      // [2,4,8] slice(1, 2) -> returns 4, original array is [2,4,8]
+
+
+
+
+
+</script>
+
+</html>

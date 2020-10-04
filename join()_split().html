@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join() split()</title>
+</head>
+
+<body>
+
+  
+</body>
+<script>
+
+let data = 'new york;10.99;2000;a;f;t;7';
+console.log(data.split(';'))
+
+
+data = 'new york_10.99_2000_7_koko_miki';
+console.log(data.split('_'))
+
+data = 'new york+10.99+2000+ew+ema+12+sloka';
+console.log(data.split('+'))
+
+data = 'split*10.99*2000*ema';
+console.log(data.split('*'))
+
+
+const nameFragements = ['Max', 'Schwarz', 'Slon', 'Kokos'];
+console.log(nameFragements.join('++'));
+console.log(nameFragements.join('*'));
+console.log(nameFragements.join(''));
+
+
+</script>
+
+</html>

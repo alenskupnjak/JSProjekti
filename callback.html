@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbackFunction</title>
+</head>
+
+<body>
+    <h1>Temp</h1>
+</body>
+<script>
+
+    fields = ['prvi', 'drugi', 'treci']
+    percentages = ['10', '20', '30']
+
+    var nodeListForEach = function (list, callback) {
+        for (var i = 0; i < list.length; i++) {
+            a = 'slon';
+            b = '+konj';
+            callback(i, a, b);
+        }
+    };
+
+    console.log(fields);
+
+    nodeListForEach(fields, function (index, a, b) {
+        fields[index] = fields[index] + ' ' + percentages[index] + '%';
+        console.log('a= '+ a + '  b= ',b)
+      
+    });
+
+    console.log(fields);
+
+
+
+    ///////////////////
+    // calback function
+    const getCountry = (countryCode, bilosto, callback) => {
+        const request = new XMLHttpRequest()
+        console.log(bilosto);
+
+        request.addEventListener('readystatechange', (e) => {
+            if (e.target.readyState === 4 && e.target.status === 200) {
+                const data = JSON.parse(e.target.responseText)
+                const country = data.find((country) => {
+                    return country.alpha2Code === countryCode
+                })
+                let podatak1 = bilosto
+                callback(undefined, country, 'a200', 'b200')
+            } else if (e.target.readyState === 4) {
+                let podatak2 = 'bilo sto'
+                callback('Unable to fetch  data', undefined, 'a400', 'b400')
+            }
+        })
+
+        request.open('GET', `https://restcountries.eu/rest/v2/all`)
+        request.send()
+    }
+
+    getCountry("HR", "nekiPodatak", (error, country, a, b) => {
+        console.log(a, b);
+
+        if (error) {
+            console.log(`Error: ${error}`)
+        } else {
+            console.log(country)
+        }
+    })
+
+
+
+</script>
+
+</html>

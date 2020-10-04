@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Temp</title>
+    </head>
+
+    <body>
+        <h1>Temp</h1>
+    </body>
+    <script>
+
+
+
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+
+// function createPhoneNumber(data){
+//     let mob = data.join('')
+// return `(${mob.slice(0,3)}) ${mob.slice(3,6)}-${mob.slice(6,10)}`
+// };
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+
+
+
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines ///whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+function isIsogram(data) {
+    let polje= [];
+    let text = data.toLowerCase()
+    let trazim;
+
+    for (let i = 0; i < text.length; i++) {
+        if ((!isNaN(text.charAt(i)))) {
+            trazim = "da";
+        }
+
+        const br = polje.findIndex((e) => {
+            if (e === text.slice(i,i+1)) {trazim = "da";}
+        });
+
+        polje.push(text.slice(i,i+1).toLowerCase())
+    }
+
+     if (trazim === 'da')  {
+        return false
+     } else {
+        return true
+     }
+}
+    
+console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram("aba"));
+console.log(isIsogram("moOse"));
+
+
+
+
+// function iisIsogram(str){
+//     podatak = new Set(str.toUpperCase())
+//     console.log(podatak);
+//     console.log(str.length);
+    
+//     return podatak == str.length;
+// }
+
+// console.log(iisIsogram("Dermatoglyphics1"));
+// console.log(iisIsogram("aba"));
+// console.log(iisIsogram("moOse"));
+
+
+
+    </script>
+
+</html>
+

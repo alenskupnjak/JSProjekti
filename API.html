@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API</title>
+</head>
+
+<body>
+    <h1>API</h1>
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+
+        function API() {
+            console.log('fff');
+            
+            
+            try {
+                $ajax({
+                headers: { 'X-Auth-Token': '4603ddaef95c46b2bf627c4da9dbd4f9' },
+                url: "http://api.football-data.org/v2/matches?status='LIVE'",
+                dataType: 'json',
+                type: 'GET'
+            }).done(function (response) {
+                // do something with the response, e.g. isolate the id of a linked resource   
+                console.log(response);
+            });
+
+
+            } catch (err) {
+                console.log(err);
+                
+            }
+
+
+        }
+        // getWeather(2487956);
+        API(); // zagreb
+
+    </script>
+</body>
+
+</html>
