@@ -6,8 +6,6 @@ const password2 = document.getElementById('password2');
 
 const pokus = document.getElementById('pokus');
 
-console.log(form);
-
 // prikaži grešku
 function showError(input, message) {
   const formControl = input.parentElement;
@@ -36,13 +34,13 @@ function checkEmail(input) {
 
 function checkRequired(inputArr) {
   inputArr.forEach((input) => {
-    console.log(input.id);
     if (input.value.trim() === '') {
       showError(input, `${getFieldname(input)} is required`);
     } else {
       showSuccess(input);
     }
   });
+
 }
 
 // Get filed name
@@ -52,9 +50,13 @@ function getFieldname(input) {
 
 // Provjeru duljine zapisa
 function checkLenght(input, min, max) {
-  if (input.value.length < min) {
+  console.log(input.value.length, 'min=', min);
+
+  if (input.value.length < parseInt(min)) {
+    console.log('lll');
+
     showError(input, `${getFieldname(input)} must be at least 3 characters`);
-  } else if (input.value.length > max) {
+  } else if (input.value.length > parseInt(max)) {
     showError(
       input,
       `${getFieldname(input)} must be less than ${max} characters`
@@ -63,23 +65,22 @@ function checkLenght(input, min, max) {
 }
 
 // provjeri dalu si ispravni passwordi
-function checkPassword(password,password2) {
-  if(password.value === password2.value) {
+function checkPassword(password, password2) {
+  if (password.value === password2.value && password.value !== '') {
     console.log(password, password2);
     showSuccess(password);
     showSuccess(password2);
   } else {
-    showError(password2, 'Passwords do not match')
+    showError(password2, 'Passwords do not match');
   }
 }
 
 // Event liseners
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
   checkRequired([username, email, password, password2]);
   checkLenght(username, 3, 15);
   checkLenght(password, 4, 20);
   checkEmail(email);
-  checkPassword(password,password2)
+  checkPassword(password, password2);
 });
