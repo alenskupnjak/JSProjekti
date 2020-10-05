@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validator</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <form id="form" class="form">
+      <h2>Registrijaj se</h2>
+      <div class="form-control">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Upisi Ime">
+        <small id="pokus">Error</small>
+      </div>
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Upisi email">
+        <small>Error</small>
+      </div>
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Upisi password">
+        <small>Error</small>
+      </div>
+      <div class="form-control">
+        <label for="password2">Potvrdi password</label>
+        <input type="password" id="password2" placeholder="Potvrdi password">
+        <small>Error</small>
+      </div>
+      <button type="submit">Potvrdi</button>
+    </form>
+  </div>
+
+
+
+</body>
+<script src="/app.js"></script>
+
+</html>

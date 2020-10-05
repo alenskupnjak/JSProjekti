@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope</title>
+</head>
+
+<body>
+  <h1>scope</h1>
+
+
+</body>
+<script>
+  "use strict";
+
+  let a = 4
+
+  let nultaFunkcija = (num) => {
+    let b = 5;
+    console.log(num + b);
+
+    let prvaFunkcija = (num2) => {
+      console.log(num2 + a);
+      // drugaFunkcija(200)  ne radi
+    }
+
+    prvaFunkcija(3);
+
+    let drugaFunkcija = (num3) => {
+      let c = 15;
+      console.log(num3 + c);
+      prvaFunkcija(100)  
+    }
+
+    drugaFunkcija(3)
+
+  }
+
+  nultaFunkcija(3)
+
+
+
+
+</script>
+
+</html>
