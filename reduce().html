@@ -2,70 +2,54 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reduce</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reduce</title>
 </head>
 
 <body>
-    <h1>Reduce</h1>
+  <h1>Reduce</h1>
 </body>
 <script>
 
-console.log('********************* Max L 199  reduce() **********')
-
-const polje = [10.99, 5.99, 3.99, 6.59, -12.3, 17, 8.88, 5.99];
-const poljeString = ['N', 'i', 'z','+','4', 'S', 'l', 'o','v','z','a','z','E', 'm','a','5', 'a'];
-console.log('polje=' + polje)
-console.log('poljeString=' + poljeString)
+  const polje = [10.99, 5.99, 4, 6.59, -12.3, 17, 9, -9, 6, 23, 17, -1];
+  const poljeString = ['N', 'i', 'z', '+', '4', 'S', 'l', 'o', 'v', 'z', 'a', 'z', 'E', 'm', 'a', '5', 'a'];
+  console.log('polje=' + polje)
+  console.log('poljeString=' + poljeString)
 
 
-let sum = polje.reduce((prevValue, curValue, opcija1, opcija2) => {
-  // opcija1 je index, opciju2 se gotovo nikad koristi
-  return prevValue + curValue}, 0);
-console.log('Suma na prvi nacin= ' + sum);
+  let sum = polje.reduce((prevValue, curValue, opcija1, opcija2) => {
+    // opcija1 je index, opciju2 se gotovo nikad koristi
+    return prevValue + curValue
+  }, 0);
+  console.log('Suma na prvi nacin= ' + sum);
+
+  sum = 0;
+  polje.forEach((data) => {
+    sum += data;
+  })
+  console.log('Suma na drugi nacin= ' + sum);
 
 
-let duplo = poljeString.reduce((prevValue, curValue, opcija1, opcija2) => {
-  // opcija1 je index, opciju2 se gotovo nikad koristi
-  // console.log(charCodeAt(prevValue))
-  if(prevValue === curValue) {
-    console.log('++++++');
-  }
-  return prevValue - curValue}, 0);
-console.log('SumaMinus= ' + duplo);
-
-
-sum = 0;
-polje.forEach((data) => {
-  sum += data;
-})
-console.log('Suma na drugi nacin= '+ sum);
-
-
-let textPlus = poljeString.reduce((prevValue, curValue, opcija1, opcija2) => {
-  // opcija1 je index, opciju2 se gotovo nikad koristi
-  return prevValue + curValue}, 'pocetnavrijednost');
-console.log('Text prvi nacin= ' + textPlus);
+  let textPlus = [...poljeString].reduce((prevValue, curValue, opcija1, opcija2) => {
+    // opcija1 je index, opciju2 se gotovo nikad koristi
+    return prevValue + curValue
+  }, 'pocetnavrijednost');
+  console.log('Text prvi nacin= ' + textPlus);
 
 
 
-let textMinus = poljeString.reduce((prevValue, curValue, opcija1, opcija2) => {
-  // opcija1 je index, opciju2 se gotovo nikad koristi
-  return prevValue - curValue}, 'pocetnavrijednost');
-console.log('TextMinus = ' + textMinus);
+  let textMinus = [poljeString].reduce((prevValue, curValue, opcija1, opcija2) => {
+    // opcija1 je index, opciju2 se gotovo nikad koristi
+    return curValue + prevValue
+  }, 'pocetnavrijednost');
+  console.log('TextMinus = ' + textMinus);
 
 
-
-const poljePrimjer = [{price: 10.99}, {price: 5.79}, {price: 29.99},{price: 12.12}];
-sum = poljePrimjer.reduce((sumVal, curVal) => sumVal + curVal.price, 0); 
-console.log( poljePrimjer );
-console.log( 'Suma= ' + sum.toFixed(2));
-
-// const poljeString = ['aaa', 'kokos','slon','vuk', 'slon', 'macka'];
-// rez = poljePrimjer.reduce((sumVal, curVal) => sumVal + curVal.price, 0); 
-// console.log( rez );
-// console.log( 'Suma= ' + sum.toFixed(2));
+  const poljePrimjer = [{ price: 10.99 }, { price: 5.79 }, { price: 29.99 }, { price: 12.12 }];
+  sum = poljePrimjer.reduce((sumVal, curVal) => sumVal + curVal.price, 0);
+  console.log(poljePrimjer);
+  console.log('Suma= ' + sum.toFixed(2));
 
 
 </script>

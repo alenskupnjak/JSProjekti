@@ -13,8 +13,7 @@
   
 </body>
 <script>
-const polje = [10.99, 5.99, 3.99, 6.59, -12.3, 17, 8.88, 5.99];
-const poljeString = ['N', 'i', 'z', 'S', 'l', 'o','v', 'a'];
+const polje = [11, 7, 4, 14, -12, 17, 9,-9, 6];
 console.log('Početna vrijednost= ' + polje);
 
 
@@ -23,39 +22,29 @@ let filteredArray =polje.filter((data, opcija1, opcija2) => {
 })
 console.log('opcija1 predstavlja index')
 console.log('opcija2= se ne koristi')
+console.log('Svi podaci veci od 6=',filteredArray);
 
-
-console.log(polje, filteredArray);
 console.log('ili isto rijesenje jednostavnije!!!!');
 filteredArray = polje.filter(data => {
   return data !== 17
 })
-console.log(polje, filteredArray);
-
-
-///////////////////////////
-const brojke = [1, -22, 100, 4, 5, 6];
-
-const numsGreater5 = brojke.filter(data => {
-  return data > 5});
-console.log(numsGreater5);
+console.log(filteredArray);
 
 
 // *********************************
+const poljeString = ['N', 'i', 'z', 'S', 'l', 'o','v', 'a'];
+console.log(poljeString);
 filteredArray =poljeString.filter((data, opcija1, opcija2)=>{
   return data === 'S'
 })
-
-console.log(poljeString, filteredArray);
+console.log(filteredArray);
 
 
 // svi osim jednog
 filteredArray =poljeString.filter((data)=>{
   return data !== 'S'
 })
-console.log(poljeString, filteredArray);
-
-
+console.log(filteredArray);
 
 </script>
 

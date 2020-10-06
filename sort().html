@@ -4,43 +4,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CONCAT</title>
+  <title>SORT</title>
 </head>
 
 <body>
-  <h1>Index of</h1>
+  <h1>SORT</h1>
 
 </body>
 <script>
-const poljeSaPodacima = [10.99, 5.99, 3.99, 6.59, -12.3, 17, 8.88, 5.99];
-const poljeString = ['N', 'i', 'z', 'S', 'l', 'o','v', 'a'];
-
-let sortedPoljeSapodacima = poljeSaPodacima.sort((a,b) => {
-  if (a>b) {
-    return 1;
-  } else if (a === b) {
-    return 0;
-  } else {
-    return -1
-  }
-});
-console.log( poljeSaPodacima, sortedPoljeSapodacima);
-console.log(sortedPoljeSapodacima.reverse());
-
-// ascending
-sortedPoljeSapodacima = poljeSaPodacima.sort((a,b) => {
-  return a - b
-});
-console.log( poljeSaPodacima, sortedPoljeSapodacima);
-console.log(sortedPoljeSapodacima.reverse());
+  const poljeSaPodacima = [10.99, 6, 4, 6.5, -12.3, 17, 9, 10];
+  console.log(poljeSaPodacima);
 
 
-//descending
-sortedPoljeSapodacima = poljeSaPodacima.sort((a,b) => {
-  return b - a
-});
-console.log( poljeSaPodacima, sortedPoljeSapodacima);
-console.log(sortedPoljeSapodacima.reverse());
+  console.log('*** ASCENDING NUMBER ****');
+  let sortedPolje = [...poljeSaPodacima].sort((a, b) => {
+    if (a > b) {
+      return 1;
+    } else if (a === b) {
+      return 0;
+    } else {
+      return -1
+    }
+  });
+  console.log(sortedPolje);
+
+
+  console.log('*** ASCENDING NUMBER ****');
+  sortedPoljeSapodacima1 = [...poljeSaPodacima].sort((a, b) => {
+    return a - b
+  });
+  console.log(sortedPoljeSapodacima1);
+
+
+  console.log('*** DESCENDING NUMBER ****');
+  sortedPoljeSapodacima2 = [...poljeSaPodacima].sort((a, b) => {
+    return b - a
+  });
+  console.log(sortedPoljeSapodacima2);
+
+
+  // *************************************************************
+  // ************************************************************
+  // STRING
+  const poljeString = ['N', 'i', 'z', 'S', 'l', 'o', 'v', 'a'];
+  console.log('*** DESCENDING STRING ****');
+  let sortedStringDES = [...poljeString].sort((a, b) => {
+    if (a > b) {
+      return 1;
+    } else if (a === b) {
+      return 0;
+    } else {
+      return -1
+    }
+  });
+  console.log(sortedStringDES);
+
+  console.log('*** ASCENDING STRING ****');
+  let sortedStringASC = [...poljeString].sort((a, b) => {
+    if (a > b) {
+      return -1;
+    } else if (a === b) {
+      return 0;
+    } else {
+      return 1
+    }
+  });
+  console.log(sortedStringASC);
 
 </script>
 

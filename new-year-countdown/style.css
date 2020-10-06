@@ -21,6 +21,7 @@ body {
   overflow: hidden;
 }
 
+/* overlay */
 /* Add a dark overlay */
 body::after {
   content: '';

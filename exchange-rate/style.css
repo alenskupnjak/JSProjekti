@@ -22,6 +22,10 @@ h1 {
   color: var(--primary-color);
 }
 
+#amount-one {
+  background-color: #5fbaa7;
+}
+
 p {
   text-align: center;
 }
@@ -29,6 +33,7 @@ p {
 .btn {
   color: #fff;
   background: var(--primary-color);
+  border: 0;
   cursor: pointer;
   border-radius: 5px;
   font-size: 12px;
@@ -86,6 +91,9 @@ button:focus {
   outline: 0;
 }
 
+
+
+/* vrijedi do... */
 @media (max-width: 600px) {
   .currency input {
     width: 200px;
