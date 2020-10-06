@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Custom Video Player</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/progress.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <h1>Custom Video Player</h1>
+  <video src="videos/gone.mp4" id="video" class="screen" poster="img/poster.png"></video>
+
+  <div class="controls">
+    <!-- play/pause -->
+    <button class="btn" id="playpause">
+      <i class="fa fa-play fa-2x"></i>
+    </button>
+
+    <button class="btn" id="stop">
+      <i class="fa fa-stop fa-2x"></i>
+    </button>
+    <input type="range" id="progress" class="progress" min="0" max="100" step="1" value="10" />
+    <span class="timestamp" id="timestamp">00:00</span>
+  </div>
+
+
+
+<!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Video_and_audio_APIs -->
+
+  <div class="player">
+    <video controls>
+      <source src="img/sintel-short.mp4" type="video/mp4">
+      <source src="img/sintel-short.webm" type="video/webm">
+      <!-- fallback content here -->
+    </video>
+    <div class="controls">
+      <button class="play" data-icon="P" aria-label="play pause toggle"></button>
+      <button class="stop" data-icon="S" aria-label="stop"></button>
+      <div class="timer">
+        <div></div>
+        <span aria-label="timer">00:00</span>
+      </div>
+      <button class="rwd" data-icon="B" aria-label="rewind"></button>
+      <button class="fwd" data-icon="F" aria-label="fast forward"></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
