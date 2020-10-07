@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 :root {
-  --modal-duration: 1s;
+  --modal-duration: 2s;
   --primary-color: #30336b;
   --secondary-color: #be2edd;
 }
@@ -13,7 +13,7 @@
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 body.show-nav {
@@ -23,7 +23,7 @@ body.show-nav {
 
 nav {
   background-color: var(--primary-color);
-  border-right: 2px solid rgba(200, 200, 200, 0.1);
+  border-right: 2px solid red;
   color: #fff;
   position: fixed;
   top: 0;
@@ -52,7 +52,7 @@ nav ul {
 }
 
 nav ul li {
-  border-bottom: 2px solid rgba(200, 200, 200, 0.1);
+  border-bottom: 2px solid blue;
   padding: 20px;
 }
 
@@ -70,10 +70,11 @@ nav ul li a:hover {
 }
 
 header {
+  /* width: 100%; */
+  position: relative;
   background-color: var(--primary-color);
   color: #fff;
   font-size: 130%;
-  position: relative;
   padding: 40px 15px;
   text-align: center;
 }
@@ -101,7 +102,7 @@ button:focus {
 }
 
 .toggle {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: orange;
   position: absolute;
   top: 20px;
   left: 20px;
@@ -113,6 +114,7 @@ button:focus {
 }
 
 .container {
+  background-color: azure;
   padding: 15px;
   margin: 0 auto;
   max-width: 100%;

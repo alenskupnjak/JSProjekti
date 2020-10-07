@@ -8,43 +8,42 @@
 </head>
 
 <body>
-  <h1>CONCAT</h1>
+  <h1>XMLHttpRequest example</h1>
 
 </body>
 <script>
 
 
-let getJSON = (url, callback) => {
+  let getJSON = (url, callback) => {
 
-let xhr = new XMLHttpRequest();
-xhr.open('GET', url, true);
-xhr.responseType = 'json';
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
 
-xhr.onload = () => {
-    let status = xhr.status;
-    if (status == 200) {
+    xhr.onload = () => {
+      let status = xhr.status;
+      if (status == 200) {
         callback(null, xhr.response);
-    } else {
+      } else {
         callback(status);
-    }
-};
+      }
+    };
+    xhr.send();
+  };
 
-xhr.send();
-};
+  getJSON('http://time.jsontest.com', (err, data) => {
 
-getJSON('http://time.jsontest.com', (err, data) => {
+    if (err != null) {
+      console.error(err);
+    } else {
 
-if (err != null) {
-    console.error(err);
-} else {
-
-    let text = `Date: ${data.date}
+      let text = `Date: ${data.date}
 Time: ${data.time}
 Unix time: ${data.milliseconds_since_epoch}`
 
-    console.log(text);
-}
-});
+      console.log(text);
+    }
+  });
 
 
 </script>

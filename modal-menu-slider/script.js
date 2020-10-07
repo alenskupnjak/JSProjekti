@@ -8,6 +8,8 @@ const navbar = document.getElementById('navbar');
 // Does not leave unused event listeners on
 // It's messy, but it works
 function closeNavbar(e) {
+  console.log('xxx');
+  
   if (
     document.body.classList.contains('show-nav') &&
     e.target !== toggle &&
@@ -35,6 +37,11 @@ open.addEventListener('click', () => modal.classList.add('show-modal'));
 close.addEventListener('click', () => modal.classList.remove('show-modal'));
 
 // Hide modal on outside click
-window.addEventListener('click', e =>
+window.addEventListener('click', (e) =>{
+
+  console.log(e.target);
+  
   e.target == modal ? modal.classList.remove('show-modal') : false
+
+}
 );

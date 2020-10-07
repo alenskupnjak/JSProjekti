@@ -236,6 +236,7 @@ Sidebar
 }
 
 .sidebar {
+  opacity: 0.5;
   position: fixed;
   top: 0;
   left: 0;

@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #2d2013;
+  background: #e09850;
   color: #fff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
@@ -11,7 +11,7 @@ body {
 
 .container {
   margin: auto;
-  max-width: 800px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,7 +88,7 @@ input[type='text'] {
   opacity: 0;
 }
 
-.meal:hover .meal-info {
+.meal .meal-info:hover {
   opacity: 1;
 }
 
@@ -103,6 +103,8 @@ input[type='text'] {
   border: 4px #fff solid;
   border-radius: 2px;
 }
+
+
 
 .single-meal-info {
   margin: 20px;
