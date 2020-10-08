@@ -29,7 +29,7 @@ const words = [
   'feeble',
   'admit',
   'drag',
-  'loving'
+  'loving',
 ];
 
 // Init word
@@ -104,7 +104,7 @@ addWordToDOM();
 // Event listeners
 
 // Typing
-text.addEventListener('input', e => {
+text.addEventListener('input', (e) => {
   const insertedText = e.target.value;
 
   if (insertedText === randomWord) {
@@ -130,7 +130,7 @@ text.addEventListener('input', e => {
 settingsBtn.addEventListener('click', () => settings.classList.toggle('hide'));
 
 // Settings select
-settingsForm.addEventListener('change', e => {
+settingsForm.addEventListener('change', (e) => {
   difficulty = e.target.value;
   localStorage.setItem('difficulty', difficulty);
 });

@@ -22,25 +22,28 @@ let transactions =
 
 // Add transaction
 function addTransaction(e) {
+  console.log(e);
+
   e.preventDefault();
 
   if (text.value.trim() === '' || amount.value.trim() === '') {
     alert('Please add a text and amount');
   } else {
-    const transaction = {
+    const jednaTransakcija = {
       id: generateID(),
       text: text.value,
-      amount: +amount.value
+      amount: +amount.value,
     };
 
-    transactions.push(transaction);
+    transactions.push(jednaTransakcija);
 
-    addTransactionDOM(transaction);
+    addTransactionDOM(jednaTransakcija);
 
     updateValues();
 
     updateLocalStorage();
 
+    // resetiraj vrijednosti
     text.value = '';
     amount.value = '';
   }
@@ -74,19 +77,33 @@ function addTransactionDOM(transaction) {
 
 // Update the balance, income and expense
 function updateValues() {
-  const amounts = transactions.map(transaction => transaction.amount);
+  const amounts = transactions.map((transaction) => {
+    return transaction.amount;
+  });
 
-  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-
-  const income = amounts
-    .filter(item => item > 0)
-    .reduce((acc, item) => (acc += item), 0)
+  const total = amounts
+    .reduce((acc, item) => {
+      return acc + item;
+    }, 0)
     .toFixed(2);
 
-  const expense = (
-    amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *
-    -1
-  ).toFixed(2);
+  const income = amounts
+    .filter((item) => {
+      return item > 0;
+    })
+    .reduce((acc, item) => {
+      return acc + item;
+    }, 0)
+    .toFixed(2);
+
+  const expense = amounts
+    .filter((item) => {
+      return item < 0;
+    })
+    .reduce((acc, item) => {
+      return acc - item;
+    }, 0)
+    .toFixed(2);
 
   balance.innerText = `$${total}`;
   money_plus.innerText = `$${income}`;
@@ -95,7 +112,10 @@ function updateValues() {
 
 // Remove transaction by ID
 function removeTransaction(id) {
-  transactions = transactions.filter(transaction => transaction.id !== id);
+  // novo polje
+  transactions = transactions.filter((transaction) => {
+    return transaction.id !== id;
+  });
 
   updateLocalStorage();
 
@@ -107,7 +127,7 @@ function updateLocalStorage() {
   localStorage.setItem('transactions', JSON.stringify(transactions));
 }
 
-// Init app
+// Pokretanje aplikacije
 function init() {
   list.innerHTML = '';
 

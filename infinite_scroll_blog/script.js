@@ -10,9 +10,7 @@ async function getPosts() {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`
   );
-
   const data = await res.json();
-
   return data;
 }
 
@@ -20,7 +18,9 @@ async function getPosts() {
 async function showPosts() {
   const posts = await getPosts();
 
-  posts.forEach(post => {
+  console.log(posts);
+  
+  posts.forEach((post) => {
     const postEl = document.createElement('div');
     postEl.classList.add('post');
     postEl.innerHTML = `
@@ -53,10 +53,15 @@ function showLoading() {
 function filterPosts(e) {
   const term = e.target.value.toUpperCase();
   const posts = document.querySelectorAll('.post');
+  console.log(posts);
+  
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     const title = post.querySelector('.post-title').innerText.toUpperCase();
     const body = post.querySelector('.post-body').innerText.toUpperCase();
+    console.log('title=', title, typeof(title));
+    console.log('body=','+', body);
+    
 
     if (title.indexOf(term) > -1 || body.indexOf(term) > -1) {
       post.style.display = 'flex';
@@ -69,7 +74,14 @@ function filterPosts(e) {
 // Show initial posts
 showPosts();
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', (e) => {  
+  // console.log(e);
+  // console.log(document.compatMode);
+  // console.log(e.target);
+  
+  // console.log(document.documentElement.scrollTop);
+  // console.log(document.title);
+  
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
   if (scrollTop + clientHeight >= scrollHeight - 5) {

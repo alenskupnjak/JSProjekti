@@ -23,6 +23,7 @@ function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
+  cover.alt = `pokus`;
 }
 
 // Play song
@@ -71,6 +72,10 @@ function nextSong() {
 
 // Update progress bar
 function updateProgress(e) {
+  console.log('Ja se vrtim non stop kada muzika svira');
+  
+  // console.log('e.srcElement=', e.srcElement);
+  
   const { duration, currentTime } = e.srcElement;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
@@ -78,10 +83,16 @@ function updateProgress(e) {
 
 // Set progress bar
 function setProgress(e) {
+  console.log('setProgress(this)=',this);
+  console.log(e);
+  console.log(this.id);
+  console.log(this.namespaceURI);
+  console.log('offsetX=',e.offsetX,this.offsetX);
+  
   const width = this.clientWidth;
   const clickX = e.offsetX;
   const duration = audio.duration;
-
+  // računam postotak
   audio.currentTime = (clickX / width) * duration;
 }
 

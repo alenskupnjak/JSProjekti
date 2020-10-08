@@ -21,7 +21,7 @@ body {
 
 .container {
   margin: 30px auto;
-  width: 350px;
+  width: 400px;
 }
 
 h1 {
@@ -122,11 +122,11 @@ input[type='number'] {
   margin: 10px 0;
 }
 
-.list li.plus {
+.list .plus {
   border-right: 5px solid #2ecc71;
 }
 
-.list li.minus {
+.list .minus {
   border-right: 5px solid #c0392b;
 }
 
