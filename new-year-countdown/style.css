@@ -21,7 +21,7 @@ body {
   overflow: hidden;
 }
 
-/* overlay */
+/* SET za overlay */
 /* Add a dark overlay */
 body::after {
   content: '';
@@ -36,6 +36,7 @@ body::after {
 body * {
   z-index: 1;
 }
+/* SET za overlay */
 
 h1 {
   font-size: 60px;

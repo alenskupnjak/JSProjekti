@@ -16,6 +16,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+
 h1 {
   position: relative;
 }
@@ -187,4 +188,4 @@ h1 button {
   padding: 12px;
   min-width: 500px;
   max-width: 100%;
-}
+} 

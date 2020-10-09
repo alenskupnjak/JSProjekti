@@ -19,7 +19,7 @@ async function showPosts() {
   const posts = await getPosts();
 
   console.log(posts);
-  
+
   posts.forEach((post) => {
     const postEl = document.createElement('div');
     postEl.classList.add('post');
@@ -54,14 +54,12 @@ function filterPosts(e) {
   const term = e.target.value.toUpperCase();
   const posts = document.querySelectorAll('.post');
   console.log(posts);
-  
 
   posts.forEach((post) => {
     const title = post.querySelector('.post-title').innerText.toUpperCase();
     const body = post.querySelector('.post-body').innerText.toUpperCase();
-    console.log('title=', title, typeof(title));
-    console.log('body=','+', body);
-    
+    console.log('title=', title, typeof title);
+    console.log('body=', '+', body);
 
     if (title.indexOf(term) > -1 || body.indexOf(term) > -1) {
       post.style.display = 'flex';
@@ -74,14 +72,14 @@ function filterPosts(e) {
 // Show initial posts
 showPosts();
 
-window.addEventListener('scroll', (e) => {  
+window.addEventListener('scroll', (e) => {
   // console.log(e);
   // console.log(document.compatMode);
   // console.log(e.target);
-  
+
   // console.log(document.documentElement.scrollTop);
   // console.log(document.title);
-  
+
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
   if (scrollTop + clientHeight >= scrollHeight - 5) {

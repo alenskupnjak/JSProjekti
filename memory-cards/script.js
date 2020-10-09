@@ -13,30 +13,17 @@ const addContainer = document.getElementById('add-container');
 // Keep track of current card
 let currentActiveCard = 0;
 
-// Store DOM cards
+// Polje u kojem ce biti spremljene sve karte
 const cardsEl = [];
 
 // Store card data
 const cardsData = getCardsData();
 
-// const cardsData = [
-//   {
-//     question: 'What must a variable begin with?',
-//     answer: 'A letter, $ or _'
-//   },
-//   {
-//     question: 'What is a variable?',
-//     answer: 'Container for a piece of data'
-//   },
-//   {
-//     question: 'Example of Case Sensitive Variable',
-//     answer: 'thisIsAVariable'
-//   }
-// ];
-
-// Create all cards
-function createCards() {
+// Kreiramo sve karte one su sve u domu, ali se ukljucuji ili isključuju.
+function kreirajSveKarte() {
   cardsData.forEach((data, index) => createCard(data, index));
+  console.log(cardsData);
+  
 }
 
 // Create a single card in DOM
@@ -62,12 +49,13 @@ function createCard(data, index) {
   </div>
 </div>
   `;
-
+  // za svaku kartu kreairamo event lisener 
   card.addEventListener('click', () => card.classList.toggle('show-answer'));
 
   // Add to DOM cards
   cardsEl.push(card);
-
+  console.log('cardsEl=', cardsEl);
+  
   cardsContainer.appendChild(card);
 
   updateCurrentText();
@@ -80,75 +68,71 @@ function updateCurrentText() {
 
 // Get cards from local storage
 function getCardsData() {
-  const cards = JSON.parse(localStorage.getItem('cards'));
+  const cards = JSON.parse(localStorage.getItem('memoryCards'));
   return cards === null ? [] : cards;
 }
 
 // Add card to local storage
 function setCardsData(cards) {
-  localStorage.setItem('cards', JSON.stringify(cards));
+  localStorage.setItem('memoryCards', JSON.stringify(cards));
   window.location.reload();
 }
 
-createCards();
+// START
+kreirajSveKarte();
 
 // Event listeners
 
-// Next button
+// **************************************
+// NEXT button
 nextBtn.addEventListener('click', () => {
   cardsEl[currentActiveCard].className = 'card left';
-
   currentActiveCard = currentActiveCard + 1;
-
   if (currentActiveCard > cardsEl.length - 1) {
     currentActiveCard = cardsEl.length - 1;
   }
-
   cardsEl[currentActiveCard].className = 'card active';
-
+  cardsEl[currentActiveCard].setAttribute('koko','koko');
+  cardsEl[currentActiveCard].style.borderColor = 'red';
   updateCurrentText();
 });
 
-// Prev button
+// **************************
+// PREV button
 prevBtn.addEventListener('click', () => {
-  cardsEl[currentActiveCard].className = 'card right';
-
+  cardsEl[currentActiveCard].className = 'card right pokusno';
   currentActiveCard = currentActiveCard - 1;
-
   if (currentActiveCard < 0) {
     currentActiveCard = 0;
   }
-
   cardsEl[currentActiveCard].className = 'card active';
-
+  cardsEl[currentActiveCard].style.borderColor = 'blue';
   updateCurrentText();
 });
 
+// ***********************************************
 // Show add container
 showBtn.addEventListener('click', () => addContainer.classList.add('show'));
 // Hide add container
 hideBtn.addEventListener('click', () => addContainer.classList.remove('show'));
 
+// ************************************
 // Add new card
 addCardBtn.addEventListener('click', () => {
   const question = questionEl.value;
   const answer = answerEl.value;
-
   if (question.trim() && answer.trim()) {
-    const newCard = { question, answer };
-
+    const newCard = { question: question, answer: answer };
     createCard(newCard);
-
     questionEl.value = '';
     answerEl.value = '';
-
     addContainer.classList.remove('show');
-
     cardsData.push(newCard);
     setCardsData(cardsData);
   }
 });
 
+// ****************************************
 // Clear cards button
 clearBtn.addEventListener('click', () => {
   localStorage.clear();
