@@ -1,0 +1,13 @@
+examples
+bower.json
+assets
+.[0-9]*
+*~
+\#*
+.\#*
+tmp
+templates
+Makefile
+favloader-src.js
+version
+node_modules

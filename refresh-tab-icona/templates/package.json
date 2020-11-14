@@ -1,0 +1,29 @@
+{
+  "name": "favloader",
+  "version": "{{VER}}",
+  "description": "Favicon Vanilla JavaScript loader animation that work when tab is not active",
+  "main": "favloader.js",
+  "unpkg": "favloader.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcubic/favloader.git"
+  },
+  "keywords": [
+    "favicon",
+    "icon",
+    "canvas",
+    "animation",
+    "gif",
+    "browser",
+    "web worker"
+  ],
+  "author": "Jakub T. Jankiewicz <jcubic@onet.pl> (https://jcubic.pl/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcubic/favloader/issues"
+  },
+  "homepage": "https://github.com/jcubic/favloader#readme",
+  "devDependencies": {
+    "uglify-js": "^3.4.9"
+  }
+}

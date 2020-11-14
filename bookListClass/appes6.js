@@ -1,3 +1,11 @@
+const container = document.getElementById('book-list');
+
+// Obriši priv child
+document.getElementById('obrisichild').addEventListener('click', (e) => {
+  console.log(container);
+  container.removeChild(container.firstChild);
+});
+
 class Book {
   constructor(title, author, isbn) {
     this.title = title;
@@ -5,7 +13,6 @@ class Book {
     this.isbn = isbn;
   }
 }
-
 
 // SPREMANJE PODATAKA NA LOCALstorage
 class Store {
@@ -20,7 +27,6 @@ class Store {
     knjige.push(book);
     localStorage.setItem('knjige', JSON.stringify(knjige));
   }
-
 
   // obriši iz local storagea
   static deleteBook(target) {
@@ -45,13 +51,13 @@ class Store {
   // učitaj nakon refreša stranicu
   static refreshPage() {
     let knjiga = JSON.parse(localStorage.getItem('knjige'));
-    localStorage.removeItem('knjige')
+    localStorage.removeItem('knjige');
     if (knjiga) {
       // Instiate UI
       const ui = new UI();
       knjiga.forEach((e, index) => {
         ui.addBookToList(e, index + 1);
-        Store.addBooks(e)
+        Store.addBooks(e);
       });
     }
   }
@@ -105,9 +111,9 @@ class UI {
 
   // Clear fields
   clearFields() {
-    document.getElementById('title').value = '';
-    document.getElementById('author').value = '';
-    document.getElementById('isbn').value = '';
+    document.getElementById('title').value = 'title';
+    document.getElementById('author').value = 'author';
+    document.getElementById('isbn').value = 'isbn';
   }
 }
 
@@ -129,9 +135,8 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
     // error alert
     ui.showAlert('Please fill the all fields', 'error');
   } else {
-    
     // odredi duljinu zapisa
-    let redniBroj = document.querySelector('#book-list').children.length
+    let redniBroj = document.querySelector('#book-list').children.length;
 
     // Add book to list
     ui.addBookToList(book, redniBroj);
@@ -148,24 +153,23 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
   e.preventDefault();
 });
 
-
-
 // Evene lisener for delete
-document.getElementById('book-list').addEventListener('click', function (event) {
+document
+  .getElementById('book-list')
+  .addEventListener('click', function (event) {
     ui = new UI();
 
     // obriši knjigu sa liste
     ui.deleteBook(event.target);
 
     // obriši knjigu iz local storagea
-    Store.deleteBook(event.target)
+    Store.deleteBook(event.target);
 
     // Prikaži poruku uspješnog brisanja
     ui.showAlert('Knjiga uspješno obrisana', 'success');
 
     event.preventDefault();
-});
-
+  });
 
 // DOM Load event
 document.addEventListener('DOMContentLoaded', Store.refreshPage());

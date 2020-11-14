@@ -1,10 +1,10 @@
-const canvas = document.querySelector("canvas");
+const canvas = document.querySelector('canvas');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // ovim definiramo kompletne funkcije za crtanje
-const c = canvas.getContext("2d");
+const c = canvas.getContext('2d');
 
 // c.fillStyle ='orange'
 // c.fillRect(100,100, 50, 50)
@@ -41,7 +41,10 @@ let mouse = {
   y: undefined,
 };
 
-window.addEventListener("mousemove", (event) => {
+window.addEventListener('mousemove', (event) => {
+
+  console.log(mouse);
+  
   mouse.x = event.x;
   mouse.y = event.y;
 });

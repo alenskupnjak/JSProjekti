@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+
+#glavni-header {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:grey;
+}
+
+#glavni-header h1{
+  color: red;
+  margin: 0;
+  /* font-size: large; */
+}
+
+footer p {
+  display: flex;
+  display: block;
+  /* position: absolute; */
+  bottom: 20px;
+  left: 0;
+  width: 50;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 1rem 20px;
+}
+
+section {
+  margin: 1rem auto;
+  width: 50rem;
+  height: 25rem;
+  max-width: 80%;
+}
+
+section ul {
+  padding: 1rem;
+  max-height: 20rem;
+  overflow: scroll;
+}
+
+
+section > h2 {
+  color: red;
+  margin: 0;
+}
+
+button{
+  font: inherit;
+  background-color: coral;
+  /* color: white; */
+  border: 2px solid red;
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+}
+
+button.info {
+  background: olivedrab;
+  color: white;
+}
+
+button.infokratko {
+  background: blue;
+  color: white;
+}
+
+button:focus {
+  outline: blue;
+}
+
+button:hover,
+button:active {
+  background: maroon;
+  border-color: blue;
+  color: red;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  background: white;
+}
+
+#aktivan-projekt {
+  border: 1px solid blueviolet;
+}
+
+#aktivan-projekt > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: magenta;
+  padding: 1rem;
+}
+
+#aktivan-projekt header h2 {
+  display: flex;
+  display: block;
+  /* color:blue; */
+  margin: 0;
+  /* align-items: center; */
+  text-align: center;
+}
+
+#pasivan-projekt > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: gray;
+  padding: 1rem;
+}
+
+#pasivan-projekt header h2 {
+  display: flex;
+  display: block;
+  /* color:blue; */
+  margin: 0;
+  /* align-items: center; */
+  text-align: center;
+}
+
+#pasivan-projekt {
+  border: 1px solid red;
+}
+
+
