@@ -1,10 +1,74 @@
 const container = document.getElementById('book-list');
 
-// Obriši priv child
+
+
+document.getElementById('book-list').addEventListener('click', (e) => {
+  console.log(e.target);
+  console.log(e.target.getAttribute('class'));
+});
+
+
+
+
+const redovi = document.querySelectorAll('.red');
+const copyredovi = [...redovi];
+copyredovi.forEach((e) => {
+  console.log(e);
+  console.log(e.getAttribute('tr'));
+});
+
+console.log('document.body=', document.body);
+console.log('document.URL=', document.URL);
+console.log('document.domain=', document.domain);
+
+// Obriši prvi child
 document.getElementById('obrisichild').addEventListener('click', (e) => {
   console.log(container);
   container.removeChild(container.firstChild);
 });
+
+// Obriši last child
+const buttonchild = document
+  .getElementById('obrisiLastchild')
+  .addEventListener('click', (e) => {
+    console.log(container);
+    container.removeChild(container.lastChild);
+  });
+
+const buttonFocus = document.getElementById('focus');
+buttonFocus.focus();
+
+buttonFocus.addEventListener('click', (e) => {
+  console.log(e);
+});
+
+// Replace  child
+
+function setValues() {
+  const list = document.getElementById('book-list');
+  // Create tr element
+  const row = document.createElement('tr');
+
+  //  kreiram klasu
+  row.classList.add('redovi');
+
+  // Inserts cols
+  row.innerHTML = `
+    <td class="red">Replace1</td>
+    <td>Replace</td>
+    <td>Replace</td>
+    <td>Replace</td>
+    <td><a href="#" moguLOvitovo="start" class="delete">X</a></td>
+`;
+
+  console.log(list.childNodes[2]);
+
+  list.replaceChild(row, list.firstChild);
+  list.replaceChild(row, list.childNodes[4]);
+  // container.removeChild(container.lastChild);
+  const redovi = document.querySelectorAll('.red');
+  console.log(redovi);
+}
 
 class Book {
   constructor(title, author, isbn) {
@@ -59,6 +123,37 @@ class Store {
         ui.addBookToList(e, index + 1);
         Store.addBooks(e);
       });
+
+      const redovi1 = document.querySelectorAll('.redovi');
+      console.log(redovi1);
+      redovi1.forEach((e) => {
+        console.log(e.childNodes);
+        console.log(e.childNodes[1]);
+        console.log(e);
+        console.log(e.classList.contains('zuji'));
+        console.log(e.innerText);
+        console.log(e.getAttribute('class'));
+        console.log(e.getAttribute('td'));
+        console.log(e.childNodes[6]);
+        // console.log( e.childNodes[6].getAttribute('data-id'));
+        e.setAttribute('td', 'novisetup');
+      });
+
+      const deleteid = document.querySelectorAll('.delete');
+      console.log(deleteid.length);
+      deleteid.forEach((e, index) => {
+        console.log(e);
+        console.log(e.attributes);
+        console.log(e.childNodes);
+        console.log(e.getAttribute('mogulovitovo'));
+        console.log('Js str 366 - ', e.dataset.id);
+
+        e.setAttribute('dodano', 'dodatak');
+        e.setAttribute('mogulovitovo', 'start +++');
+        if (index === deleteid.length - 1) {
+          e.removeAttribute('mogulovitovo');
+        }
+      });
     }
   }
 }
@@ -68,16 +163,43 @@ class UI {
   // dodajem knjigu
   addBookToList(book, rb) {
     const list = document.getElementById('book-list');
+
     // Create tr element
     const row = document.createElement('tr');
+
+    // klasa se može dodati i ovako
+    row.className = 'prvaklasa';
+
+    // Dodaj klasu
+    row.classList.add('redovi');
+    // Dodaj klasu
+    row.classList.toggle('zuji');
+
+    row.style.color = 'magenta'
+    row.style.backgroundColor = 'transparent'
+    row.style.fontFamily = 'Areal'
+
+    // row.insertAdjacentElement('beforebegin', '<p> beforebegin</p>')
+
+    const ubaci = document.createTextNode('<div>ajmmo</div>');
+
+    var element = document.createElement('div');
+    element.className = 'message';
+
+    var textNode = document.createTextNode('Hello world!');
+    element.appendChild(textNode);
+
+    // element.createComment('Ovdje je komentar')
+
     // Inserts cols
     row.innerHTML = `
-  <td>${rb}</td>
+  <td class="red">${rb}</td>
   <td>${book.title}</td>
   <td>${book.author}</td>
   <td>${book.isbn}</td>
-  <td><a href="#" class="delete">X</a></td>
+  <td><a href="#" mogulovitovo="start" data-id ="${Math.random()}"class="delete">X</a></td>
   `;
+    list.appendChild(element);
     list.appendChild(row);
   }
 
@@ -95,6 +217,10 @@ class UI {
 
     // Insert alert
     container.insertBefore(div, form);
+    container.insertAdjacentHTML('afterend', '<p>afterend AAAA</p>');
+    container.insertAdjacentHTML('afterbegin', '<p>afterbegin BBBB</p>');
+    container.insertAdjacentHTML('beforeend', '<p>beforeEnd  CCCC ></p>');
+    container.insertAdjacentHTML('beforebegin', '<p> beforebegin DDDD </p>');
 
     // Timeout after 3 sec
     setTimeout(function () {
@@ -104,7 +230,11 @@ class UI {
 
   // Delete book
   deleteBook(target) {
+    console.log(target);
+
     if (target.className === 'delete') {
+      console.log('target.className, delete', target.className);
+
       target.parentElement.parentElement.remove();
     }
   }
@@ -117,7 +247,7 @@ class UI {
   }
 }
 
-// eventlistener
+// SUBMIT
 document.getElementById('book-form').addEventListener('submit', function (e) {
   // get form values
   const title = document.getElementById('title').value;
@@ -153,7 +283,7 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
   e.preventDefault();
 });
 
-// Evene lisener for delete
+// Event-lisener for delete
 document
   .getElementById('book-list')
   .addEventListener('click', function (event) {
@@ -173,3 +303,18 @@ document
 
 // DOM Load event
 document.addEventListener('DOMContentLoaded', Store.refreshPage());
+
+if (document.readyState) {
+  console.log('da, spreman sam');
+  console.log(document.charset);
+}
+
+function outerHtml() {
+  alert(container.outerHTML);
+  alert(container.innerText)
+}
+
+const getValue = document.getElementById('blog-test');
+console.log('getValue.innerHTML= ',getValue.innerHTML);
+console.log('getValue.innerText= ',getValue.innerText);
+console.log('getValue.textContent= ',getValue.textContent);

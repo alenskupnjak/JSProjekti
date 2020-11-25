@@ -11,7 +11,7 @@ const richestPeople = [
   'Larry Ellison',
   'Mark Zuckerberg',
   'Michael Bloomberg',
-  'Larry Page'
+  'Larry Page',
 ];
 
 // Store listitems
@@ -24,9 +24,9 @@ createList();
 // Insert list items into DOM
 function createList() {
   [...richestPeople]
-    .map(a => ({ value: a, sort: Math.random() }))
+    .map((a) => ({ value: a, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
-    .map(a => a.value)
+    .map((a) => a.value)
     .forEach((person, index) => {
       const listItem = document.createElement('li');
 
@@ -103,11 +103,11 @@ function addEventListeners() {
   const draggables = document.querySelectorAll('.draggable');
   const dragListItems = document.querySelectorAll('.draggable-list li');
 
-  draggables.forEach(draggable => {
+  draggables.forEach((draggable) => {
     draggable.addEventListener('dragstart', dragStart);
   });
 
-  dragListItems.forEach(item => {
+  dragListItems.forEach((item) => {
     item.addEventListener('dragover', dragOver);
     item.addEventListener('drop', dragDrop);
     item.addEventListener('dragenter', dragEnter);

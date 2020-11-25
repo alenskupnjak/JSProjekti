@@ -1,0 +1,10 @@
+.focus {
+  /* background-color: red; */
+}
+/* .focus:active {
+  border: 3px solid red;
+} */
+
+.focus:focus {
+  border: 3px solid blue;
+}

@@ -1,3 +1,4 @@
+
 function Kviz (pitanje, odgovor, provjera) {
     this.pitanje = pitanje;
     this.odgovor = odgovor;

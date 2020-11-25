@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
   <style>
     .sucess,
@@ -27,35 +26,29 @@
       text-decoration: none;
     }
   </style>
-  <title>Book list Class</title>
+  <title>Book list</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>Add book Class</h1>
+    <h1>Add book</h1>
     <form id="book-form">
       <div>
         <label for="title">Title</label>
-        <input type="text" id="title" class="u-full-width" value="title">
+        <input type="text" id="title" class="u-full-width">
       </div>
       <div>
         <label for="author">Author</label>
-        <input type="text" id="author" class="u-full-width" value="author">
+        <input type="text" id="author" class="u-full-width">
       </div>
       <div>
         <label for="isbn">ISBN</label>
-        <input type="text" id="isbn" class="u-full-width" value="ISBN">
+        <input type="text" id="isbn" class="u-full-width">
       </div>
       <div>
-        <input type="submit" value="Submit" class="u-full-width" style="background: sandybrown;">
+        <input type="submit" value="Submit" class="u-full-width" style="background: greenyellow;">
       </div>
     </form>
-    <button id="obrisichild"> Obrisi first child </button>
-    <button id="obrisiLastchild"> Obrisi Last child </button>
-    <button onclick="setValues()"> Replace child </button>
-    <button id="focus" class="focus"> Focus </button>
-    <button onclick="outerHtml()"> OuterHTML </button>
-
     <table class="u-full-width">
       <thead>
         <tr>
@@ -66,13 +59,8 @@
           <th>Briši</th>
         </tr>
       </thead>
-      <tbody id="book-list" class="book-list"></tbody>
+      <tbody id="book-list"></tbody>
     </table>
-  </div>
-
-
-  <div id='blog-test'>
-    This element is <strong>strong</strong> and has some super fun <code>code</code>!
   </div>
   <script src="appes6.js"></script>
 </body>
