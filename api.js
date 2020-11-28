@@ -1,7 +1,7 @@
 function API() {
   console.log('fff');
   try {
-    fetch('https://api.football-data.org/v2/matches', {
+    fetch('https://api.football-data.org/v2/competitions/PL/matches', {
       method: 'GET',
       headers: {
         'X-Auth-Token': '4603ddaef95c46b2bf627c4da9dbd4f9',

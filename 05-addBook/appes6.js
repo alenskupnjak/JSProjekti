@@ -6,7 +6,12 @@ class Book {
   }
 }
 
+function prikaziHtml() {
+  const container = document.querySelector('.container');
+  console.log(container.innerHTML);
+}
 
+// ****************************************
 // SPREMANJE PODATAKA NA LOCALstorage
 class Store {
   // dodaj knjigu u local store
@@ -21,7 +26,7 @@ class Store {
     localStorage.setItem('knjige', JSON.stringify(knjige));
   }
 
-
+  // *********************************************
   // obriši iz local storagea
   static deleteBook(target) {
     // Obriši iz local storage
@@ -42,21 +47,23 @@ class Store {
     });
   }
 
+  // **********************************
   // učitaj nakon refreša stranicu
   static refreshPage() {
     let knjiga = JSON.parse(localStorage.getItem('knjige'));
-    localStorage.removeItem('knjige')
+    localStorage.removeItem('knjige');
     if (knjiga) {
       // Instiate UI
       const ui = new UI();
       knjiga.forEach((e, index) => {
         ui.addBookToList(e, index + 1);
-        Store.addBooks(e)
+        Store.addBooks(e);
       });
     }
   }
 }
 
+// *********************************
 // UI controler
 class UI {
   // dodajem knjigu
@@ -78,13 +85,17 @@ class UI {
   // Show Alert
   showAlert(msg, className) {
     const div = document.createElement('div');
+
     // Add class
     div.className = `alert ${className}`;
+
     // Add text
     div.appendChild(document.createTextNode(msg));
+
     //Get parent
     const container = document.querySelector('.container');
 
+    // Oznaci element ispred kojeg zelis ubaciti
     const form = document.querySelector('#book-form');
 
     // Insert alert
@@ -96,6 +107,7 @@ class UI {
     }, 2000);
   }
 
+  // *****************************************
   // Delete book
   deleteBook(target) {
     if (target.className === 'delete') {
@@ -111,6 +123,7 @@ class UI {
   }
 }
 
+// ********************************************************
 // eventlistener
 document.getElementById('book-form').addEventListener('submit', function (e) {
   // get form values
@@ -129,9 +142,8 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
     // error alert
     ui.showAlert('Please fill the all fields', 'error');
   } else {
-    
     // odredi duljinu zapisa
-    let redniBroj = document.querySelector('#book-list').children.length
+    let redniBroj = document.querySelector('#book-list').children.length;
 
     // Add book to list
     ui.addBookToList(book, redniBroj);
@@ -148,8 +160,7 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
   e.preventDefault();
 });
 
-
-
+// ********************************************************
 // Evene lisener for delete
 document.getElementById('book-list').addEventListener('click', function (event) {
     ui = new UI();
@@ -158,14 +169,13 @@ document.getElementById('book-list').addEventListener('click', function (event) 
     ui.deleteBook(event.target);
 
     // obriši knjigu iz local storagea
-    Store.deleteBook(event.target)
+    Store.deleteBook(event.target);
 
     // Prikaži poruku uspješnog brisanja
     ui.showAlert('Knjiga uspješno obrisana', 'success');
 
     event.preventDefault();
-});
-
+  });
 
 // DOM Load event
 document.addEventListener('DOMContentLoaded', Store.refreshPage());

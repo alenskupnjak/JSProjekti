@@ -15,6 +15,7 @@ recognition.start();
 // Capture user speak
 function onSpeak(e) {
   const msg = e.results[0][0].transcript;
+  console.log('e.results[0][0].transcript', e.results[0][0].transcript,'---', msg);
 
   writeMessage(msg);
   checkNumber(msg);
@@ -28,9 +29,15 @@ function writeMessage(msg) {
   `;
 }
 
+
+
 // Check msg against number
-function checkNumber(msg) {
+function checkNumber(msg) {5
+  console.log('msg=',msg);
+  
   const num = +msg;
+
+  console.log('num=',num);
 
   // Check if valid number
   if (Number.isNaN(num)) {
@@ -69,7 +76,7 @@ recognition.addEventListener('result', onSpeak);
 // End SR service
 recognition.addEventListener('end', () => recognition.start());
 
-document.body.addEventListener('click', e => {
+document.body.addEventListener('click', (e) => {
   if (e.target.id == 'play-again') {
     window.location.reload();
   }
