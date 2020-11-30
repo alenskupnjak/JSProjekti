@@ -8,8 +8,6 @@ document.getElementById('book-list').addEventListener('click', (e) => {
 });
 
 
-
-
 const redovi = document.querySelectorAll('.red');
 const copyredovi = [...redovi];
 copyredovi.forEach((e) => {
@@ -27,6 +25,7 @@ document.getElementById('obrisichild').addEventListener('click', (e) => {
   container.removeChild(container.firstChild);
 });
 
+
 // Obriši last child
 const buttonchild = document
   .getElementById('obrisiLastchild')
@@ -34,6 +33,7 @@ const buttonchild = document
     console.log(container);
     container.removeChild(container.lastChild);
   });
+
 
 const buttonFocus = document.getElementById('focus');
 buttonFocus.focus();
@@ -112,6 +112,7 @@ class Store {
     });
   }
 
+
   // učitaj nakon refreša stranicu
   static refreshPage() {
     let knjiga = JSON.parse(localStorage.getItem('knjige'));
@@ -183,13 +184,11 @@ class UI {
 
     const ubaci = document.createTextNode('<div>ajmmo</div>');
 
-    var element = document.createElement('div');
+    let element = document.createElement('div');
     element.className = 'message';
 
     var textNode = document.createTextNode('Hello world!');
     element.appendChild(textNode);
-
-    // element.createComment('Ovdje je komentar')
 
     // Inserts cols
     row.innerHTML = `
@@ -203,13 +202,17 @@ class UI {
     list.appendChild(row);
   }
 
+  // ****************************************************
   // Show Alert
   showAlert(msg, className) {
+
     const div = document.createElement('div');
     // Add class
     div.className = `alert ${className}`;
+
     // Add text
     div.appendChild(document.createTextNode(msg));
+
     //Get parent
     const container = document.querySelector('.container');
 
@@ -217,7 +220,7 @@ class UI {
 
     // Insert alert
     container.insertBefore(div, form);
-    container.insertAdjacentHTML('afterend', '<p>afterend AAAA</p>');
+    container.insertAdjacentHTML('afterend', div);
     container.insertAdjacentHTML('afterbegin', '<p>afterbegin BBBB</p>');
     container.insertAdjacentHTML('beforeend', '<p>beforeEnd  CCCC ></p>');
     container.insertAdjacentHTML('beforebegin', '<p> beforebegin DDDD </p>');
