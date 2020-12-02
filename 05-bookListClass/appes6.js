@@ -1,7 +1,5 @@
 const container = document.getElementById('book-list');
 
-
-
 document.getElementById('book-list').addEventListener('click', (e) => {
   console.log(e.target);
   console.log(e.target.getAttribute('class'));
@@ -43,7 +41,6 @@ buttonFocus.addEventListener('click', (e) => {
 });
 
 // Replace  child
-
 function setValues() {
   const list = document.getElementById('book-list');
   // Create tr element
@@ -70,6 +67,8 @@ function setValues() {
   console.log(redovi);
 }
 
+// ************************************************************************
+// CLASS BOOK
 class Book {
   constructor(title, author, isbn) {
     this.title = title;
@@ -78,7 +77,7 @@ class Book {
   }
 }
 
-// SPREMANJE PODATAKA NA LOCALstorage
+//  CLASS Store SPREMANJE PODATAKA NA LOCALstorage
 class Store {
   // dodaj knjigu u local store
   static addBooks(book) {
@@ -159,7 +158,7 @@ class Store {
   }
 }
 
-// UI controler
+//  CLASS UI controler
 class UI {
   // dodajem knjigu
   addBookToList(book, rb) {
@@ -180,7 +179,6 @@ class UI {
     row.style.backgroundColor = 'transparent'
     row.style.fontFamily = 'Areal'
 
-    // row.insertAdjacentElement('beforebegin', '<p> beforebegin</p>')
 
     const ubaci = document.createTextNode('<div>ajmmo</div>');
 
@@ -205,7 +203,6 @@ class UI {
   // ****************************************************
   // Show Alert
   showAlert(msg, className) {
-
     const div = document.createElement('div');
     // Add class
     div.className = `alert ${className}`;
@@ -220,24 +217,25 @@ class UI {
 
     // Insert alert
     container.insertBefore(div, form);
-    container.insertAdjacentHTML('afterend', div);
-    container.insertAdjacentHTML('afterbegin', '<p>afterbegin BBBB</p>');
-    container.insertAdjacentHTML('beforeend', '<p>beforeEnd  CCCC ></p>');
-    container.insertAdjacentHTML('beforebegin', '<p> beforebegin DDDD </p>');
+    container.insertAdjacentHTML('afterend', '<p class="afterend">afterend AAAA</p>');
+    container.insertAdjacentHTML('afterbegin', '<p class="afterbegin">afterbegin BBBB</p>');
+    container.insertAdjacentHTML('beforeend', '<p class="beforeend">beforeEnd  CCCC </p>');
+    container.insertAdjacentHTML('beforebegin', '<p class="beforebegin"> beforebegin DDDD </p>');
 
     // Timeout after 3 sec
     setTimeout(function () {
       document.querySelector('.alert').remove();
-    }, 2000);
+      document.querySelector('.afterend').remove();
+      document.querySelector('.afterbegin').remove();
+      document.querySelector('.beforeend').remove();
+      document.querySelector('.beforebegin').remove();
+    }, 3000);
   }
 
   // Delete book
   deleteBook(target) {
-    console.log(target);
-
     if (target.className === 'delete') {
       console.log('target.className, delete', target.className);
-
       target.parentElement.parentElement.remove();
     }
   }

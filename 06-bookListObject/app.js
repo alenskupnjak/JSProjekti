@@ -44,15 +44,12 @@ UI.prototype.showAlert = function (msg, className) {
   }, 3000);
 };
 
-
 // Delete book
-UI.prototype.deleteBook = function(target){
-  if(target.className === 'delete'){
+UI.prototype.deleteBook = function (target) {
+  if (target.className === 'delete') {
     target.parentElement.parentElement.remove();
   }
 };
-
-
 
 // Clear fields
 UI.prototype.clearFields = function () {
@@ -92,13 +89,13 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
 });
 
 // Evene lisener for delete
-document.getElementById('book-list').addEventListener('click', function(event){
-  ui = new UI();
+document.getElementById('book-list').addEventListener('click', function (event) {
+    ui = new UI();
 
-  ui.deleteBook(event.target);
+    ui.deleteBook(event.target);
 
-  // Prikaži poruku uspješnog brisanja
-  ui.showAlert('Knjiga uspješno obrisana', 'success')
+    // Prikaži poruku uspješnog brisanja
+    ui.showAlert('Knjiga uspješno obrisana', 'success');
 
-  event.preventDefault();
-})
+    event.preventDefault();
+  });

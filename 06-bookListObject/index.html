@@ -23,16 +23,16 @@
     }
 
     .delete {
-      text-decoration: none;
+      /* text-decoration: none; */
     }
   </style>
-  <title>Book list</title>
+  <title>Book list Object</title>
 </head>
 
 <body>
   <div class="container">
-    <h1><a href="appes6.js" target="_blank">Add book JS</a></h1>
-    <button type="submit"  onclick="prikaziHtml()">Prikazi plain HTML u console.log</button>
+    <h1> <a href="app.js" target="_blank">Add book JS</a></h1>
+
     <form id="book-form">
       <div>
         <label for="title">Title</label>
@@ -47,23 +47,26 @@
         <input type="text" id="isbn" class="u-full-width">
       </div>
       <div>
-        <input type="submit" value="Submit" class="u-full-width">
+        <input type="submit" value="Submit" class="u-full-width" style="background: greenyellow;">
       </div>
     </form>
+
     <table class="u-full-width">
       <thead>
         <tr>
-          <th>Rb.</th>
           <th>Title</th>
           <th>Author</th>
           <th>ISBN</th>
-          <th>Briši</th>
+          <th>X</th>
         </tr>
       </thead>
+
+      <!--  Na ovo se kacimo -->
       <tbody id="book-list"></tbody>
+
     </table>
   </div>
-  <script src="appes6.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
