@@ -58,8 +58,6 @@ class UI {
     }
 
 
-
-
   showAlert(msg, className) {
     this.clearAlert();
     // Create div
@@ -78,7 +76,7 @@ class UI {
     // Timeout after 3s
     setTimeout(()=> {
       this.clearAlert()
-    }, 2000)
+    }, 3000)
   }
 
   clearAlert () {
