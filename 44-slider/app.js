@@ -10,22 +10,19 @@ slides.forEach(function (slide, index) {
 let counter = 0;
 
 nextBtn.addEventListener('click', function () {
-  console.log('nextBtn',counter);
-  
+  console.log('nextBtn', counter);
+
   counter++;
   carousel();
 });
 
 prevBtn.addEventListener('click', function () {
-  console.log('prevBtn',counter);
+  console.log('prevBtn', counter);
   counter--;
   carousel();
 });
 
-
-
 function carousel() {
-
   if (counter < slides.length - 1) {
     nextBtn.style.display = 'block';
   } else {
@@ -44,4 +41,3 @@ function carousel() {
 }
 
 prevBtn.style.display = 'none';
-
