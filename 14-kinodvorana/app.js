@@ -8,7 +8,7 @@ let ticketPrice = parseInt(movieSelect.value);
 
 populateIU();
 
-// popuni dvorona iz local staorage sa podacima
+// popuni dvoronu iz local staorage sa podacima
 function populateIU() {
   const selectedSeats = JSON.parse(localStorage.getItem('kinoSjedala'));
   if (selectedSeats) {
@@ -71,7 +71,7 @@ container.addEventListener('click', (e) => {
   }
 });
 
-// vježba
+// vjezba
 
 const nacin1 = [...document.querySelectorAll('.seat')];
 const nacin2 = Array.from(document.querySelectorAll('.seat'));
@@ -79,10 +79,9 @@ const nacin2 = Array.from(document.querySelectorAll('.seat'));
 
 const nacin3 = document.querySelectorAll('.seat');
 
-for (let a of nacin3) {
 
+for (let a of nacin3) {
   console.log('for (let a of nacin3)',a);
-  
 }
 
 // nacin1.forEach( e=> {

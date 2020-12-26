@@ -17,6 +17,10 @@ body {
   margin: 0;
 }
 
+h2 a {
+  color: gold;
+}
+
 
 .movie-container {
   margin: 20px 0;
