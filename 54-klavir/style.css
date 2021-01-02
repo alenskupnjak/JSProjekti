@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  /* background: #333; */
+}
+
+.tipke {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.tipka {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  width: 7rem;
+  height: 4rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 0.5rem black;
+  transition: all 500ms ;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: blue;
+  box-shadow: 0 0 1rem blue;
+}
+
+.zvuk {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: goldenrod;
+}
+
+h2 {
+  text-align: center;
+  padding: 1rem;
+}
+
+ul li{
+  text-align: center;
+  padding: 0.5rem;
+}
+
+
+/* Internal links, beginning with "#" */
+a[href^="#"] {
+  background-color: gold;
+}
+
+/* Links with "example" anywhere in the URL */
+a[href*="example"] {
+  background-color: silver;
+}
+
+/* Links with "insensitive" anywhere in the URL,
+   regardless of capitalization */
+a[href*="insensitive" i] {
+  color: cyan;
+}
+
+/* Links with "cAsE" anywhere in the URL,
+with matching capitalization */
+a[href*="cAsE" i] {
+  color: pink;
+}
+
+/* Links that end in ".org" */
+a[href$=".org"] {
+  color: red;
+}
+
+/* Links that end in ".org" */
+a[href$=".konj"] {
+  color:magenta;
+}
+
+/* Links that start with "https" and end in ".org" */
+a[href^="https"][href$=".org"] {
+  color: green;
+}

@@ -1,3 +1,39 @@
+// SAT
+
+const satKazaljka = document.querySelector('.sat')
+const minutaKazaljka = document.querySelector('.minuta')
+const sekundaKazaljka = document.querySelector('.sekunda')
+
+function setSat(e) {
+  const sada = new Date();
+  const sekunda = sada.getSeconds();
+  const sekundaKut = (sekunda / 60) * 360 + 90 ;
+  console.log(sekundaKut);
+  
+  // ovo iskljucije efakat transition je radi cijeli krug....
+  if (sekundaKut == 444) {
+    console.log('evo me');
+    sekundaKazaljka.style.transition = 'none'
+  }
+  sekundaKazaljka.style.transform=`rotate(${sekundaKut}deg)`
+
+  const minuta = sada.getMinutes();
+  const minutaKut = (minuta / 60) * 360 + 90;
+  minutaKazaljka.style.transform=`rotate(${minutaKut}deg)`
+  minutaKazaljka.style.background ='blue'
+
+  
+  const sat = sada.getHours();
+  const satKut = (sat / 12) * 360;
+  satKazaljka.style.transform=`rotate(${satKut +90}deg)`
+
+
+  console.log(sat, minuta, sekunda);
+}
+
+setInterval(setSat, 1000);
+
+// ODBROJAVANJE
 const days = document.getElementById('days');
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
