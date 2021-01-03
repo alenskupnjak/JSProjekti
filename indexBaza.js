@@ -1580,26 +1580,6 @@ poljeSaPodacima.forEach((data, indexKakoHocesNazovi, data1) => {
 console.log(poljeSaPodacima, poljeB);
 
 
-console.log('*************************************************L 195  map() ******')
-const taxAdjustedPrices = poljeSaPodacima.map((data, xxx, prices) => {
-  const priceObj = { index: xxx, objekt1: data * (1 + tax), objekt2: 'slon' };
-  return priceObj;
-});
-console.log(poljeSaPodacima, taxAdjustedPrices);
-
-
-const originalArray = [
-    {price: 10.99},
-     {price: 5.99}, 
-     {price: 29.99},
-    {price: 17},
-     {price: -3}, 
-     {price: 125},
-    ];
-
-
-const transformedArray = originalArray.map(obj => obj.price); // produces [10.99, 5.99, 29.99]
-console.log(transformedArray);
 
 
 

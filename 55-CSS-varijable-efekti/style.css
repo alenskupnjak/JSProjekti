@@ -1,0 +1,45 @@
+
+:root {
+  --base: #ffc600;
+  --spacing: 20px;
+  --blur:10px;
+  --pokusno:22px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background: #193548;
+  color: #fff;
+  padding: 1rem;
+}
+
+
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: #43e5f7; 
+  border-radius: 2px;
+  width: 100px;
+  height: 10px;
+}
+
+.controls {
+  margin: auto;
+  padding: 2rem;
+}
+
+img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+.slova {
+  color: var(--base);
+}
