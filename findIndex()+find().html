@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>findindex() + find()</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+  const personData = [{ name: 'Max' },
+  { name: 'Manuel', podatak: 'pokus' },
+  { name: 'slon' },
+  { name: 'macka' },
+  { name: 'tigar' }
+  ];
+
+
+  // ovo ne prolazi ne moze naci objekt!
+  console.log(personData.indexOf({ name: 'Manuel' }));
+
+
+  let data = personData.find((dat, idx, persons) => {
+    return dat.name === 'Manuel';
+  });
+  console.log(data);
+
+  data.name = 'Anna';
+  console.log(data, personData);
+
+  // pronalazi index
+  const maxIndex = personData.findIndex((data, indx, persons) => {
+    return data.name === 'slon';
+  });
+  console.log(maxIndex);
+
+  // pronalazi index
+  polje = ['10', '20', '30', '22', '45', 'z', '125', 'hh']
+  const Index = polje.findIndex((data, indx, persons) => {
+    return data === '22';
+  });
+
+  console.log(polje);
+  console.log('Index = ' + Index);
+
+
+  const comments = [
+    { text: 'Love this!', id: 523423 },
+    { text: 'Super good', id: 823423 },
+    { text: 'You are the best', id: 2039842 },
+    { text: 'Ramen is my fav food ever', id: 123523 },
+    { text: 'Nice Nice Nice!', id: 542328 }
+  ];
+
+  // Pronalazim index
+  const index = comments.find(data => {
+    return data.id === 2039842
+  })
+
+  // Brišem iz tablice
+  comments.splice(index, 1)
+  console.table(comments);
+
+
+
+
+</script>
+
+</html>

@@ -1822,4 +1822,12 @@ console.log(mike);
 mike.calculateAge();
 
 
+let mojBroj =10;
+console.log(mojBroj++);
+console.log(mojBroj);
+
+console.log(++mojBroj);
+console.log(mojBroj);
+
+
 

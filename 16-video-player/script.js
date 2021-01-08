@@ -77,7 +77,5 @@ video.addEventListener('play', updatePlayIcon);
 
 video.addEventListener('timeupdate', updateProgress);
 
-
 stop.addEventListener('click', stopVideo);
-
 progress.addEventListener('change', setVideoProgress);

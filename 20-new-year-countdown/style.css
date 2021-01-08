@@ -7,20 +7,21 @@
 }
 
 body {
-  background-image: url('https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
-  color: #fff;
-  font-family: 'Lato', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0;
-  overflow: hidden;
+  background-image: url('img/photo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  /* margin: 0; */
+  /* overflow: hidden; */
 }
 
 /* SET za overlay */
@@ -42,16 +43,119 @@ body * {
 
 .container {
   display: flex;
+  position: relative;
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  width: 1000px;
 }
 
-.clock {
-  position: relative;
+.textcss {
+  /* padding: 10px; */
+ /* height: 10vh; */
+ color: #fff !important;
+ font-size: 2rem;
+ 
+}
+
+
+
+/* ******************************** */
+
+/* Pauza */
+.timer {
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  /* background: red; */
+  /* flex-direction: column; */
+  height: 20vh;
+  z-index: 2;
+  padding: 1rem;
+}
+
+.timer-controls {
+  display: flex;
+  width: 100%;
+}
+
+.timer-controls > * {
+  flex: 1;
+}
+
+.timer-controls form {
+  display: flex;
+  flex: 1;
+}
+
+.timer-controls input {
+  flex: 1;
+  justify-content: space-between;
+  border: 0;
+  padding: 2rem;
+}
+
+.timer-button {
+  width: 120px;
+  background: green;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  /* background: rgba(0,0,0,0.5); */
+  border-bottom: 3px solid rgba(0,0,0,0.2);
+  border-right: 1px solid rgba(0,0,0,0.2);
+  padding: 1rem;
+  font-family: 'Inconsolata', monospace;
+}
+
+.display {
+  background: burlywood;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.display-time-left {
+  font-weight: 100;
+  font-size: 2rem;
+  margin: 0;
+  color: white;
+  text-shadow: 4px 4px 0 rgba(0,0,0,0.05);
+}
+
+.display-time-end {
+  font-size: 4rem;
+  color: white;
+}
+
+.timer form {
+  flex:1;
+}
+
+.unos {
+  width: 200px;
+  font-size: 1.5rem;
+  background: #EFEFEF;
+}
+
+
+
+
+/* ************************** */
+/* Clock */
+.container .clock {
+  display: flex;
+  /* position: relative; */
+  text-align: center;
+  /* margin-top: rem ; */
   margin: auto;
   padding: 1rem;
-  display: flex;
   width: 25rem;
   height: 25rem;
   border-radius:50%;
@@ -64,7 +168,7 @@ body * {
   0 0 10px rgba(0,0,0,0.2);
 }
 
-.clock-face{
+.clock-face {
   position: relative;
   width: 100%;
   height: 100%;
@@ -91,10 +195,10 @@ body * {
   margin: auto;
 }
 
-.minuta {
+/* .minuta {
   color: red;
   background-color: red;
-}
+} */
 
 h1 {
   font-size: 60px;
@@ -131,6 +235,21 @@ h1 {
 .time h2 {
   margin: 0 0 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

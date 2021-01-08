@@ -7,6 +7,11 @@
   <title>SORT</title>
 </head>
 
+
+
+
+
+
 <body>
   <h1>SORT</h1>
 
@@ -138,6 +143,26 @@
   })
   console.log(alfa)
 
+
+  // sortiranje poadtaka bez the, an, a
+  const bands = ['The Plot in You 01', 'The Devil Wears Prada 02', 'Pierce the Veil 03', 'Norma Jean 04', 'The Bled 05', 'Say Anything 06', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+  console.table(bands);
+
+  function strip(bandName) {
+    return bandName.replace(/^(a |the |an )/i, '').trim();
+  }
+
+  const sortedBands = bands.sort((a, b) => {
+    if (strip(a) > strip(b)) {
+      return 1
+    } else {
+      return -1
+    }
+    // strip(a) > strip(b) ? 1 : -1
+  });
+
+  console.table(sortedBands);
+  
 
 
 
