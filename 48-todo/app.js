@@ -63,7 +63,7 @@ function addItem(e) {
 
     // set local storage
     addToLocalStorage(id, value);
-    
+
     // set back to default
     setBackToDefault();
   } else if (value !== '' && editFlag) {

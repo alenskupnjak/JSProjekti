@@ -39,17 +39,17 @@
         var argsArr = Array.prototype.slice.call(arguments, 1);
 
         argsArr.forEach(function (cur) {
-            console.log((2016 - cur) >= limit, 2016 - cur );
+            console.log((2016 - cur) >= limit, 2016 - cur);
         })
     }
     isFullAgeTT(10, 1999, 1965, 2016, 1987);
 
 
     //ES6 **************
-    function isFullAgeES6 (limit, ...years) {
+    function isFullAgeES6(limit, ...years) {
         years.forEach(cur => {
             console.log((2016 - cur) >= limit, 2016 - cur)
-    });
+        });
     }
     isFullAgeES6(21, 1990, 1999, 1965, 2016, 1987);
 

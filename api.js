@@ -9,7 +9,7 @@ function API() {
         // 'Access-Control-Allow-Origin': '*',
         // 'Access-Control-Allow-Headers': 'x-auth-token, x-response-control',
         // 'Content-Length': '0',
-        // 'Content-Type': 'text/plain'
+        // 'Content-Type': 'text/plain',
         // 'Content-Type': 'application/json',
       },
     })

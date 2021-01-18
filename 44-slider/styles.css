@@ -174,7 +174,99 @@ main {
   display: grid;
   place-items: center;
 }
-/*
+
+/* 
+=====================
+Traka
+====================
+*/
+
+.traka-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.traka-progres-container {
+  display: flex;
+  position: relative;
+  width: 800px;
+  max-width: 80%;
+  /* max-width: 80%; */
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.traka-progres-container::before {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  height: 4px;
+  z-index: -1;
+}
+
+.traka-progres {
+  position: absolute;
+  background-color: #3498db;
+  top: 50%;
+  left: 0;
+  width: 0%;
+  transform: translateY(-50%);
+  height: 4px;
+  z-index: -1;
+  transition: all 1s ease-in;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: 500ms ease-in;
+}
+
+.circle.active {
+  border-color: #3498db;
+}
+
+.btnTr {
+  background-color: #3498db;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 5px;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.btnTr:active {
+  transform: scale(0.95);
+}
+
+.btnTr:focus {
+  outline: none;
+}
+
+.btnTr:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* *******************
 =============== 
 Slider
 ===============

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loop Object</title>
+</head>
+
+<body>
+  <h1>Loop Object</h1>
+</body>
+<script>
+
+  let objektMoj = {
+    key1: "value1",
+    key2: "value2",
+    key3: "value3",
+    key4: "value4"
+  }
+
+  for (let data in objektMoj) {
+    console.log(data);
+  }
+
+  //  Keys
+  const keys = Object.keys(objektMoj)
+  console.log(keys);
+
+
+  //  Value
+  const vrijednosti = Object.values(objektMoj)
+  console.log(vrijednosti, typeof (vrijednosti));
+
+  // Entries
+  const entries = Object.entries(objektMoj);
+  console.log(entries);
+  
+
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -4,13 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slider</title>
+  <title>Slider, Progres bar</title>
 
   <!-- styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+
+  <div class="traka-container">
+    <h1><a href="styles.css" target="_blank">CSS</a> </h1>
+    <h1><a href="app.js" target="_blank">JS</a> </h1>
+    <div class="traka-progres-container">
+      <div class="traka-progres" id="traka-progres"></div>
+      <div class="circle active">1</div>
+      <div class="circle">2</div>
+      <div class="circle">3</div>
+      <div class="circle">4</div>
+      <div class="circle">5</div>
+      <div class="circle">6</div>
+    </div>
+    <div>
+      <button type="button" class="prevBt btnTr" id="prevBt" disabled>Previous</button>
+      <button type="button" class="nextBt btnTr" id="nextBt">Next</button>
+    </div>
+  </div>
+
+
+
+
   <div class="slider-container">
 
     <div class="slide">
@@ -85,7 +107,6 @@
     <button type="button" class="nextBtn"> next </button>
   </div>
 
-  <!-- javascript -->
   <script src="app.js"></script>
 </body>
 

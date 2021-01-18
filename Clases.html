@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Classes</title>
+  <meta charset="UTF-8">
+  <title>Classes</title>
 </head>
 
 <body>
@@ -12,132 +12,132 @@
 
 <script>
 
-//ES5
-var Person5 = function(name, yearOfBirth, job) {
+  //ES5
+  var Person5 = function (name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
     this.job = job;
-}
+  }
 
-Person5.prototype.calculateAge = function() {
+  Person5.prototype.calculateAge = function () {
     var age = new Date().getFullYear() - this.yearOfBirth;
     console.log('Dob= ' + age);
-}
+  }
 
-var john5 = new Person5('John', 1990, 'teacher');
-console.log(john5);
-john5.calculateAge();
-
-
+  var john5 = new Person5('John', 1990, 'teacher');
+  console.log(john5);
+  john5.calculateAge();
 
 
-//ES6
-class Person6 {
-    constructor (name, yearOfBirth, job) {
-        this.name = name;
-        this.yearOfBirth = yearOfBirth;
-        this.job = job;
+
+
+  //ES6
+  class Person6 {
+    constructor(name, yearOfBirth, job) {
+      this.name = name;
+      this.yearOfBirth = yearOfBirth;
+      this.job = job;
     }
-    
+
     calculateAge() {
-        var age = new Date().getFullYear() - this.yearOfBirth;
-        console.log(age);
+      var age = new Date().getFullYear() - this.yearOfBirth;
+      console.log(age);
     }
-    
+
     greeting() {
-        console.log('Hey there!');
+      console.log('Hey there!');
     }
-}
+  }
 
-const john6 = new Person6('John', 1990, 'teacher');
+  const john6 = new Person6('John', 1990, 'teacher');
 
-john6.calculateAge();
-john6.greeting();
-
-
-console.log('**** Lecture: Classes and subclasses****')
+  john6.calculateAge();
+  john6.greeting();
 
 
-//ES5
-var PersonES5 = function(name, yearOfBirth, job) {
+  console.log('**** Lecture: Classes and subclasses****')
+
+
+  //ES5
+  var PersonES5 = function (name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
     this.job = job;
-}
+  }
 
-PersonES5.prototype.calculateAge = function() {
+  PersonES5.prototype.calculateAge = function () {
     var age = new Date().getFullYear() - this.yearOfBirth;
     console.log(age);
-}
+  }
 
-var AthleteES5 = function(name, yearOfBirth, job, olymicGames, medals) {
+  var AthleteES5 = function (name, yearOfBirth, job, olymicGames, medals) {
     PersonES5.call(this, name, yearOfBirth, job);
     this.olymicGames = olymicGames;
     this.medals = medals;
-}
+  }
 
-AthleteES5.prototype = Object.create(PersonES5.prototype);
+  AthleteES5.prototype = Object.create(PersonES5.prototype);
 
 
-AthleteES5.prototype.wonMedal = function() {
+  AthleteES5.prototype.wonMedal = function () {
     this.medals++;
     console.log(this.medals);
-}
+  }
 
-console.log(AthleteES5);
-
-
-var johnAthlete5 = new AthleteES5('John', 1990, 'swimmer', 3, 10);
-
-johnAthlete5.calculateAge();
-johnAthlete5.wonMedal();
+  console.log(AthleteES5);
 
 
+  var johnAthlete5 = new AthleteES5('John', 1990, 'swimmer', 3, 10);
 
-console.log('**** Lecture: ES6 ****')
-class PersonES6 {
-    constructor (name, yearOfBirth, job) {
-        this.name = name;
-        this.yearOfBirth = yearOfBirth;
-        this.job = job;
+  johnAthlete5.calculateAge();
+  johnAthlete5.wonMedal();
+
+
+
+  console.log('**** Lecture: ES6 ****')
+  class PersonES6 {
+    constructor(name, yearOfBirth, job) {
+      this.name = name;
+      this.yearOfBirth = yearOfBirth;
+      this.job = job;
     }
 
     calculateAge() {
-        var age = new Date().getFullYear() - this.yearOfBirth;
-        console.log(age);
+      var age = new Date().getFullYear() - this.yearOfBirth;
+      console.log(age);
     }
 
     pokus1() {
-        var age = this.name + ' ' + this.job;
-        console.log(age);
+      var age = this.name + ' ' + this.job;
+      console.log(age);
     }
-}
+  }
 
-class Athlete6 extends PersonES6  {
+  class Athlete6 extends PersonES6 {
     constructor(name, yearOfBirth, job, olympicGames, medals) {
-        super(name, yearOfBirth, job);
-        this.olympicGames = olympicGames;
-        this.medals = medals;
+      super(name, yearOfBirth, job);
+      this.olympicGames = olympicGames;
+      this.medals = medals;
     }
-    
+
     wonMedal() {
-        this.medals++;
-        console.log(this.medals);
+      this.medals++;
+      console.log(this.medals);
     }
 
     pokus2() {
-        var age = this.name + ' ' + this.olympicGames + '  22';
-        console.log(age);
+      var age = this.name + ' ' + this.olympicGames + '  22';
+      console.log(age);
     }
-}
+  }
 
-const johnAthlete6 = new Athlete6('John', 1990, 'swimmer', 3, 10);
+  const johnAthlete6 = new Athlete6('John', 1990, 'swimmer', 3, 10);
 
-johnAthlete6.wonMedal();
-johnAthlete6.calculateAge();
-johnAthlete6.pokus1();
-johnAthlete6.pokus2();
-console.log(johnAthlete6);
+  johnAthlete6.wonMedal();
+  johnAthlete6.calculateAge();
+  johnAthlete6.pokus1();
+  johnAthlete6.pokus2();
+  console.log(johnAthlete6);
 
 
 

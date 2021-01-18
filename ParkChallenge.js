@@ -22,142 +22,148 @@ HINT: Use some of the ES6 features: classes, subclasses, template strings, defau
 
 */
 
-
 class Element {
-    constructor(name, buildYear) {
-        this.name = name;
-        this.buildYear = buildYear;
-    }
+  constructor(name, buildYear) {
+    this.name = name;
+    this.buildYear = buildYear;
+  }
 }
-
 
 class Park extends Element {
-    constructor(name, buildYear, area, numTrees) {
-        super(name, buildYear);
-        this.area = area; //km2
-        this.numTrees = numTrees;
-    }
-    
-    treeDensity() {
-        const density = this.numTrees / this.area;
-        console.log(`${this.name} has a tree density of ${density.toFixed(2)} trees per square km.`);
-    }
-}
+  constructor(name, buildYear, area, numTrees) {
+    super(name, buildYear);
+    this.area = area; //km2
+    this.numTrees = numTrees;
+  }
 
+  treeDensity() {
+    const density = this.numTrees / this.area;
+    console.log(
+      `${this.name} has a tree density of ${density.toFixed(
+        2
+      )} trees per square km.`
+    );
+  }
+}
 
 class Street extends Element {
-    constructor(name, buildYear, length, size = 3) {
-        super(name, buildYear);
-        this.length = length;
-        this.size = size;
-    }
-    
-    classifyStreet () {
-        const classification = new Map();
-        classification.set(1, 'tiny');
-        classification.set(2, 'small');
-        classification.set(3, 'normal');
-        classification.set(4, 'big');
-        classification.set(5, 'huge');
-        console.log(`${this.name}, build in ${this.buildYear}, is a ${classification.get(this.size)} street.`);
-    }
+  constructor(name, buildYear, length, size = 3) {
+    super(name, buildYear);
+    this.length = length;
+    this.size = size;
+  }
+
+  classifyStreet() {
+    const classification = new Map();
+    classification.set(1, 'tiny');
+    classification.set(2, 'small');
+    classification.set(3, 'normal');
+    classification.set(4, 'big');
+    classification.set(5, 'huge');
+    console.log(
+      `${this.name}, build in ${this.buildYear}, is a ${classification.get(
+        this.size
+      )} street.`
+    );
+  }
 }
 
+const allParks = [
+  new Park('Green Park', 1987, 0.2, 215),
+  new Park('National Park', 1894, 2.9, 3541),
+  new Park('Krka', 1824, 2.9, 13541),
+  new Park('Plitvice', 1794, 2.9, 1111),
+  new Park('Kornati', 1953, 0.4, 949),
+];
 
-const allParks = [new Park('Green Park', 1987, 0.2, 215),
-                  new Park('National Park', 1894, 2.9, 3541),
-                  new Park('Krka', 1824, 2.9, 13541),
-                  new Park('Plitvice', 1794, 2.9, 1111),
-                  new Park('Kornati', 1953, 0.4, 949)];
-
-const allStreets = [new Street('Ocean Avenue', 1999, 1.1, 4),
-                    new Street('Evergreen Street', 2008, 2.7, 2),
-                    new Street('4th Street', 2015, 0.8),
-                    new Street('Slavonska', 2001, 1,1),
-                    new Street('Vukovarska', 2012, 3),
-                    new Street('Sunset Boulevard', 1982, 2.5, 5)];
-
+const allStreets = [
+  new Street('Ocean Avenue', 1999, 1.1, 4),
+  new Street('Evergreen Street', 2008, 2.7, 2),
+  new Street('4th Street', 2015, 0.8),
+  new Street('Slavonska', 2001, 1, 1),
+  new Street('Vukovarska', 2012, 3),
+  new Street('Sunset Boulevard', 1982, 2.5, 5),
+];
 
 function calc(arr) {
-    const sum = arr.reduce((prev, cur, index) => {    
-        prev + cur
-    }, 0);
-    return [sum, sum / arr.length];
+  const sum = arr.reduce((prev, cur, index) => {
+    prev + cur;
+  }, 0);
+  return [sum, sum / arr.length];
 }
 
 function zbroji(data) {
-    sum = 0;
-    data.forEach( e => {
-        sum += e
-    })
-    return [sum, sum / data.length];
+  sum = 0;
+  data.forEach((e) => {
+    sum += e;
+  });
+  return [sum, sum / data.length];
 }
-
-
 
 // Report parkovi **********************************
 function reportParks(data) {
-    console.log('-----PARKS REPORT-----');
-    console.log(data);
-    
-    // Izračunaj gustoču šume za svuku šumu pojedinačno
-    data.forEach(el => el.treeDensity());
-    
+  console.log('-----PARKS REPORT-----');
+  console.log(data);
 
-    // Average age
-    const ages = data.map(el => {
-        starost = new Date().getFullYear() - el.buildYear
-        el.name = 'Park: ' + el.name
-        return starost
-    });
-    console.log('Starost= '+ ages)
+  // Izračunaj gustoču šume za svauku šumu pojedinačno
+  data.forEach((el) => el.treeDensity());
 
+  // Average age
+  const ages = data.map((el) => {
+    starost = new Date().getFullYear() - el.buildYear;
+    el.name = 'Park: ' + el.name;
+    return starost;
+  });
+  console.log('Starost= ' + ages);
 
-    const [totalStarost, srednjaStarost] = zbroji(ages)
-    console.log(`Nasi ${data.length} parkovi imaju an average of ${srednjaStarost} years.`);
-    const [totalAge, avgAge] = calc(ages);
-    console.log(`Our ${data.length} parks have an average of ${avgAge} years.`);
-    
+  const [totalStarost, srednjaStarost] = zbroji(ages);
+  console.log(
+    `Nasi ${data.length} parkovi imaju an average of ${srednjaStarost} years.`
+  );
+  const [totalAge, avgAge] = calc(ages);
+  console.log(`Our ${data.length} parks have an average of ${avgAge} years.`);
 
-    // Which park has more than 1000 trees
-    const i = data.map(el => el.numTrees).findIndex(el => el >= 1000);
-    console.log(`${data[i].name} has more than 1000 trees.`);
+  // Which park has more than 1000 trees
+  const i = data.map((el) => el.numTrees).findIndex((el) => el >= 1000);
+  console.log(`${data[i].name} has more than 1000 trees.`);
 
-
-    // Koji park ima najvise drveca
-    let max, ind;
-    data.forEach((el, index) => {
-        if (index === 0){
-            ind = index;
-            max = data[0].numTrees}
-            else {
-                if( data[index].numTrees > max) {
-                    ind = index;
-                    max = data[index].numTrees;
-                }
-            }
-    })
-    console.log(`Šuma ${data[ind].name} ima najviše stabla ${data[ind].numTrees}  `)
+  // Koji park ima najvise drveca
+  let max, ind;
+  data.forEach((el, index) => {
+    if (index === 0) {
+      ind = index;
+      max = data[0].numTrees;
+    } else {
+      if (data[index].numTrees > max) {
+        ind = index;
+        max = data[index].numTrees;
+      }
+    }
+  });
+  console.log(
+    `Šuma ${data[ind].name} ima najviše stabla ${data[ind].numTrees}  `
+  );
 }
 
-
-
+// **************************************************************
 // report Ulice
 function reportStreets(data) {
-    console.log('-----STREETS REPORT-----');
-    console.log(allStreets);
-    
-    //Total and average length of the town's streets
-    const [totalLength, avgLength] = calc(data.map(el => el.length));
-    console.log(`Our ${data.length} streets have a total length of ${totalLength} km, with an average of ${avgLength} km.`);
-    
-    // CLassify sizes
-    data.forEach(el => el.classifyStreet());
+  console.log('-----STREETS REPORT-----');
+  console.log(allStreets);
+
+  //Total and average length of the town's streets
+  const [totalLength, avgLength] = calc(data.map((el) => el.length));
+  console.log(
+    `Our ${data.length} streets have a total length of ${totalLength} km, with an average of ${avgLength} km.`
+  );
+
+  // CLassify sizes
+  data.forEach((el) => el.classifyStreet());
 }
+
 
 
 // report Parkovi
 reportParks(allParks);
-console.log('-----------------------------------------')
+console.log('-----------------------------------------');
 reportStreets(allStreets);
-

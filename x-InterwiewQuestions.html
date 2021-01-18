@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interwiew questions</title>
+</head>
+
+<body>
+  <h1>Interwiew questions</h1>
+</body>
+<script>
+
+
+  //  Question: What is the value of `foo`?
+  let foo = 10 + '20';
+  console.log(foo);
+
+  //  What will be the output of the code below?
+  console.log(0.1 + 0.2);
+  console.log(0.3);
+  console.log(0.1 + 0.2 == 0.3);
+
+  // How would you make this work?
+  // add(2,5)
+
+
+  // What value is returned from the following statement?
+  console.log("i'm a lasagna hog");
+  console.log("i'm a lasagna hog".split(''));
+  console.log("i'm a lasagna hog".split('').reverse());
+  console.log("i'm a lasagna hog".split('').reverse().join(''));
+
+  // What is the value of `window.foo`?
+  console.log(window.foo);
+  console.log(window.foo || (window.foo = "bar"));
+
+  // What is the outcome of the two alerts below?
+  let foo1 = "Hello";
+  (function () {
+    let bar = " World";
+    console.log('Unutra 01= ' + foo1 + bar)
+  })();
+  // Ovdje javlja greški
+  // alert('Vani ' + foo1 + bar);
+
+  // 
+
+  let funkcij01 = function () {
+    if (true) {
+      var v = 2
+      let l = 1
+      console.log('Unutra 02=', v);
+      console.log('Unutra 02=', l);
+    }
+    console.log('vani 02=', v);
+    // Javlja grešku
+    // console.log('vani 02=', l || 'Grška');
+  }
+  funkcij01()
+
+
+  console.log('*******************');
+  const profile = {
+    firstName: '',
+    lastName: '',
+    setName: function (name) {
+      let splitName = (n) => {
+        let nameArray = n.split(' ');
+        this.firstName = nameArray[0];
+        this.lastName = nameArray[1];
+        // console.log(this.firstName, this.lastName);
+      }
+      splitName(name)
+    }
+  }
+
+  profile.setName('John doe');
+  console.log(profile.firstName);
+
+
+  getDays(
+    new Date("June 14, 2019"),
+    new Date("June 20, 2019")
+  )
+
+
+  function getDays(date1, date2) {
+    console.log(date1, date2);
+    console.log(date1.getTime(), date2);
+    console.log(date1 - date2);
+    let razlika = Math.abs(date1 - date2) / (1000 * 3600 * 24)
+    console.log(razlika);
+
+    console.log(new Date(date1 - date2).getDate() - 1);
+
+
+  }
+
+
+  // ***************************
+  let hero = {
+    name: 'Slon',
+    getSecretIdentity: function () {
+      return this.name
+    }
+  }
+
+  let stoleSecretIdentity = hero.getSecretIdentity.bind(hero)
+
+  console.log(stoleSecretIdentity());
+  console.log(hero.getSecretIdentity());
+
+
+
+  function sevenBoom(arr) {
+    console.log(arr, typeof arr, arr.toString());
+    console.log(arr.join(' '));
+    
+    return arr.includes(7) ? "Boom!" : "there is no 7 in the array"
+  }
+
+  console.log(sevenBoom([2, 55, 60, 97, 86, 7, 14]));
+  console.log([1, 2, 3].includes(2) );
+  
+  
+
+
+
+
+
+
+</script>
+
+</html>
