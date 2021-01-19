@@ -40,7 +40,6 @@ function checkRequired(inputArr) {
       showSuccess(input);
     }
   });
-
 }
 
 // Get filed name
@@ -53,8 +52,6 @@ function checkLenght(input, min, max) {
   console.log(input.value.length, 'min=', min);
 
   if (input.value.length < parseInt(min)) {
-    console.log('lll');
-
     showError(input, `${getFieldname(input)} must be at least 3 characters`);
   } else if (input.value.length > parseInt(max)) {
     showError(
