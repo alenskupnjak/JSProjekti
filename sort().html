@@ -15,7 +15,7 @@
 <script>
   'use strict';
   const poljeSaPodacima = [10.99, 6, 4, 6.5, -12.3, 17, 9, 10];
-  console.log(poljeSaPodacima);
+  console.log({ poljeSaPodacima });
 
 
   console.log('*** ASCENDING NUMBER ****');
@@ -32,17 +32,13 @@
 
 
   console.log('*** ASCENDING NUMBER ****');
-  sortedPoljeSapodacima1 = [...poljeSaPodacima].sort((a, b) => {
-    return a - b
-  });
-  console.log(sortedPoljeSapodacima1);
+  let samoBrojeviA = [...poljeSaPodacima].sort((a, b) => a - b);
+  console.log(samoBrojeviA);
 
 
   console.log('*** DESCENDING NUMBER ****');
-  sortedPoljeSapodacima2 = [...poljeSaPodacima].sort((a, b) => {
-    return b - a
-  });
-  console.log(sortedPoljeSapodacima2);
+  let samoBrojeviB = [...poljeSaPodacima].sort((a, b) => b - a);
+  console.log(samoBrojeviB);
 
 
   // *************************************************************
@@ -89,7 +85,7 @@
     { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
   ];
 
-  // 3. Sort the inventors by birthdate, oldest to youngest
+  // Sort the inventors by birthdate, oldest to youngest
   const sortiraniInventors = inventors.sort((a, b) => {
     if (a.year > b.year) {
       return 1
@@ -97,11 +93,24 @@
       return -1
     }
   })
-  console.table(sortiraniInventors)
+  console.log('01-',sortiraniInventors)
+
+  // Sort the inventors by birthdate, oldest to youngest
+  const sortiraniInventorsA = inventors.sort((a, b) => a.year - b.year)
+  console.log('02-',sortiraniInventorsA)
+
+  // Sort the inventors by birthdate, oldest to youngest
+  const sortiraniInventorsPokus = inventors.sort((a, b) => {
+    if (a.year > b.year) {
+      return 1
+    } else {
+      return -1
+    }
+  })
+  console.table(sortiraniInventorsPokus)
 
 
   // 5. Sort the inventors by years lived
-
   const sortiraniInventorsLived = inventors.sort((a, b) => {
     const prvi = a.passed - a.year
     const drugi = b.passed - b.year
@@ -157,9 +166,8 @@
     }
     // strip(a) > strip(b) ? 1 : -1
   });
-
   console.table(sortedBands);
-  
+
 
 
 

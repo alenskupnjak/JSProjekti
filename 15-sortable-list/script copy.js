@@ -24,22 +24,29 @@ createList();
 // Insert list items into DOM
 function createList() {
   [...richestPeople]
-    .map((a) => ({ value: a, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map((a) => a.value)
+    .map((a) => {
+      // kreirasm objekt
+      return { value: a, sortlista: Math.random() };
+    })
+    .sort((a, b) => {
+      // console.log(a, b);
+      // sortiram bo brojevima, randomnumber
+      return a.sortlista - b.sortlista;
+    })
+    .map((a) => {
+      // console.log(a);
+      // vracam samo vrijednost imena+prezimena, random mi ne treba
+      return a.value;
+    })
     .forEach((person, index) => {
-      // kreiramo element
       const listItem = document.createElement('li');
 
-      // definiramo element
       listItem.setAttribute('data-index', index);
 
       listItem.innerHTML = `
         <span class="number">${index + 1}</span>
-        <div class="draggable" draggable="true" imea="${person}" id="${
-        index + 1
-      }">
-          <p class="person-name" ime="${person}">${person}</p>
+        <div class="draggable" draggable="true" id="${index + 1}">
+          <p class="person-name" id="p${index + 1}">${person}</p>
           <i class="fas fa-grip-lines"></i>
         </div>
       `;
@@ -53,46 +60,39 @@ function createList() {
 }
 
 function dragStart(e) {
-  console.log('Event: ', 'dragstart');
+  console.log('Event: ', 'dragstart', e.target);
   dragStartIndex = +this.closest('li').getAttribute('data-index');
-  let dragStartIndex1 = +e.target.closest('li').getAttribute('data-index');
-  console.log({ dragStartIndex, dragStartIndex1 });
 }
 
 function dragEnter(e) {
-  console.log('Event: dragenter', e.target);
+  console.log('Event: ', 'dragenter', e.target);
   this.classList.add('over');
 }
 
-function dragLeave() {
-  console.log('Event: ', 'dragleave');
+function dragLeave(e) {
+  console.log('Event: ', 'dragleave target=', e.target, 'this=', this);
   this.classList.remove('over');
 }
 
-function dragOver(e) {
-  // console.log(e.target);
-
-  filterEvent(printaj('dragOver'), 2000);
-  // console.log(this, arguments);
-
-  // console.log('Event: ', 'dragover');
-  e.preventDefault();
+function dragOver() {
+  console.log('Event: ', 'dragover', this, 'Arguments=', arguments);
 }
 
-function dragDrop() {
-  console.log('Event: ', 'drop');
+function dragDrop(e) {
+  console.log('Event: ', 'drop', e.target);
   const dragEndIndex = +this.getAttribute('data-index');
   swapItems(dragStartIndex, dragEndIndex);
-
   this.classList.remove('over');
+}
+
+function mousedown(e) {
+  console.log('mousedown: ', e.target);
 }
 
 // Swap list items that are drag and drop
 function swapItems(fromIndex, toIndex) {
   const itemOne = listItems[fromIndex].querySelector('.draggable');
   const itemTwo = listItems[toIndex].querySelector('.draggable');
-  console.log({ itemOne, itemTwo });
-  console.log(listItems[fromIndex], listItems[toIndex]);
 
   listItems[fromIndex].appendChild(itemTwo);
   listItems[toIndex].appendChild(itemOne);
@@ -126,12 +126,13 @@ function addEventListeners() {
     item.addEventListener('drop', dragDrop);
     item.addEventListener('dragenter', dragEnter);
     item.addEventListener('dragleave', dragLeave);
+    item.addEventListener('mousedown', mousedown);
   });
 }
 
 check.addEventListener('click', checkOrder);
 
-// FILTRIRA DOGADAJ
+// dogadaj
 function filterEvent(funkcijaIzvana, wait = 50) {
   let timeout;
   return function () {
@@ -141,10 +142,6 @@ function filterEvent(funkcijaIzvana, wait = 50) {
       console.log('FILETER RADI na', timeout);
       funkcijaIzvana.apply(this, arguments);
     }, wait);
-    console.clear();
+    // console.clear();
   };
-}
-
-function printaj(x) {
-  console.log(x);
 }
