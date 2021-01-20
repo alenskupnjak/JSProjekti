@@ -1,3 +1,64 @@
+const tagsEl = document.getElementById('tags');
+const textarea = document.getElementById('random');
+
+textarea.focus();
+
+textarea.addEventListener('keyup', (e) => {
+  createTags(e.target.value);
+  console.log(e);
+  if (e.key === 'Enter') {
+    console.log('enter');
+
+    setTimeout(() => {
+      textarea.value = '';
+    }, 500);
+    randomSelect();
+  }
+});
+
+function createTags(input) {
+  const tags = input
+    .split(',')
+    .map((tag) => {
+      return tag.trim();
+    })
+    .filter((tag) => {
+      return tag.trim() !== '';
+    });
+  tagsEl.innerHTML = '';
+  tags.forEach((element) => {
+    // tagsEl.innerHTML += `<span class="tag">${element}</span>`
+    //  ili
+    const tag = document.createElement('span');
+    tag.classList.add('tag');
+    tag.innerHTML = element;
+    tagsEl.appendChild(tag);
+  });
+}
+
+function randomSelect() {
+  let brojOdbrojavanja = 30;
+  console.log(tagsEl);
+  console.log(tagsEl.childNodes);
+  console.log(tagsEl.childNodes.length);
+
+  const interval = setInterval(() => {
+    const rand = Math.floor(Math.random() * tagsEl.childNodes.length);
+    brojOdbrojavanja--;
+    if (brojOdbrojavanja === 0) {
+      tagsEl.childNodes[rand].classList.add('higlight');
+      clearInterval(interval);
+    } else {
+      setTimeout(() => {
+        tagsEl.childNodes[rand].classList.remove('higlight');
+      }, 200);
+    }
+
+    tagsEl.childNodes[rand].classList.add('higlight');
+  }, 200);
+}
+
+// *****************************************
 // Game values
 let min = 1;
 let max = 10;

@@ -1,0 +1,39 @@
+.container-random {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: antiquewhite;
+  height: 50vh;
+  width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+h3 {
+  color: blue;
+}
+
+textarea {
+  border: none;
+  display: block;
+  width: 80%;
+  height: 100px;
+  padding: 10px;
+  font-size: 3rem;
+}
+
+.tag {
+  background-color: #f0932b;
+  color: beige;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  margin: 0 5px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.tag.higlight {
+  background-color: #273c75;
+}
