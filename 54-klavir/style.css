@@ -4,9 +4,47 @@
   font-family: sans-serif;
 }
 
-html {
-  /* background: #333; */
+
+
+.klavir1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 20vh;
+  /* max-width: 1000px; */
+
+  background-color: aliceblue;
+  /* margin: 1rem; */
 }
+
+.btn {
+  background-color: rebeccapurple;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  width: 100px;
+  height: 40px;
+  margin: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+
+
+
+
+/*  Klavir ******************* */
 
 .tipke {
   display: flex;
@@ -54,6 +92,29 @@ ul li{
   text-align: center;
   padding: 0.5rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Internal links, beginning with "#" */

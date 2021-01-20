@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Klavir</title>
 </head>
+
 <body>
-  <h2><a href="app.js" target="_blank">JS</a></h2>
-  <h2><a href="style.css" target="_blank">CSS</a></h2>
+  <h2><a href="app.js" target="_blank">JS</a>---<a href="style.css" target="_blank">CSS</a></h2>
+
+  <div class="klavir1">
+
+    <audio id="applause" src="sounds-a/applause.mp3"></audio>
+    <audio id="boo" src="sounds-a/boo.mp3"></audio>
+    <audio id="gasp" src="sounds-a/gasp.mp3"></audio>
+    <audio id="tada" src="sounds-a/tada.mp3"></audio>
+    <audio id="victory" src="sounds-a/victory.mp3"></audio>
+    <audio id="wrong" src="sounds-a/wrong.mp3"></audio>
+
+    <div id="buttons"></div>
+
+  </div>
+
   <div class="tipke">
     <div data-tipka="65" class="tipka">
       <kbd>A</kbd>
@@ -49,27 +64,28 @@
 
 
   </div>
-  
-    <ul>
-      <li><a href="#internal">1-Internal link</a></li>
-      <li><a href="http://example.com">2-Example link</a></li>
-      <li><a href="#InSensitive">3-Insensitive internal link</a></li>
-      <li><a href="http://example.org">4-Example org link</a></li>
-      <li><a href="https://example.org">5-Example https org link</a></li>
-      <li><a href="https://example.konj">6-Example https konj link</a></li>
-    </ul>
+
+  <ul>
+    <li><a href="#internal">1-Internal link</a></li>
+    <li><a href="http://example.com">2-Example link</a></li>
+    <li><a href="#InSensitive">3-Insensitive internal link</a></li>
+    <li><a href="http://example.org">4-Example org link</a></li>
+    <li><a href="https://example.org">5-Example https org link</a></li>
+    <li><a href="https://example.konj">6-Example https konj link</a></li>
+  </ul>
 
 
-  <audio  data-tipka="65" src="sounds/clap.wav"></audio>
-  <audio  data-tipka="83" src="sounds/hihat.wav"></audio>
-  <audio  data-tipka="68" src="sounds/kick.wav"></audio>
-  <audio  data-tipka="70" src="sounds/openhat.wav"></audio>
-  <audio  data-tipka="71" src="sounds/boom.wav"></audio>
-  <audio  data-tipka="72" src="sounds/ride.wav"></audio>
-  <audio  data-tipka="74" src="sounds/snare.wav"></audio>
-  <audio  data-tipka="75" src="sounds/tom.wav"></audio>
-  <audio  data-tipka="76" src="sounds/tink.wav"></audio>
+  <audio data-tipka="65" src="sounds/clap.wav"></audio>
+  <audio data-tipka="83" src="sounds/hihat.wav"></audio>
+  <audio data-tipka="68" src="sounds/kick.wav"></audio>
+  <audio data-tipka="70" src="sounds/openhat.wav"></audio>
+  <audio data-tipka="71" src="sounds/boom.wav"></audio>
+  <audio data-tipka="72" src="sounds/ride.wav"></audio>
+  <audio data-tipka="74" src="sounds/snare.wav"></audio>
+  <audio data-tipka="75" src="sounds/tom.wav"></audio>
+  <audio data-tipka="76" src="sounds/tink.wav"></audio>
 
   <script src="app.js"></script>
 </body>
+
 </html>
