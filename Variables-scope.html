@@ -17,28 +17,28 @@
 
   let a = 1
 
-  let nultaFunkcija = (num) => {
+  let Funkcija_00 = (num) => {
     let b = 2;
-    console.log(num + b);
+    console.log({ num }, num + b);
 
-    let prvaFunkcija = (num2) => {
-      console.log(num2 + a);
+    let Funkcija_01 = (num2) => {
+      console.log({ num2 }, num2 + a);
       // drugaFunkcija(200)  ne radi
     }
 
-    prvaFunkcija(3);
+    Funkcija_01(100);
 
-    let drugaFunkcija = (num3) => {
+    let Funkcija_02 = (num3) => {
       let c = 15;
-      console.log(num3 + c);
-      prvaFunkcija(100)
+      console.log({ num3 }, num3 + c);
+      Funkcija_01(150)
     }
 
-    drugaFunkcija(3)
+    Funkcija_02(200)
 
   }
 
-  nultaFunkcija(3)
+  Funkcija_00(3)
 
 
 

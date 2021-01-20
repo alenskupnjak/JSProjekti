@@ -3,7 +3,7 @@
 Fonts
 ===============
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
 
 /*
 =============== 
@@ -44,8 +44,8 @@ Variables
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-gold: #c59d5f;
   --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Open Sans', sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -68,7 +68,7 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-primary);
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -182,12 +182,12 @@ Questions
 ===============
 */
 .title {
-  margin-top: 15vh;
-  margin-bottom: 4rem;
+  margin-top: 1vh;
+  margin-bottom: 1rem;
 }
 .title h2 {
   color: var(--clr-gold);
-  font-family: "Great Vibes", cursive;
+  font-family: 'Roboto', cursive;
   text-align: center;
 }
 .section-center {
@@ -245,5 +245,110 @@ Questions
   display: inline;
 }
 .show-text .plus-icon {
+  display: none;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  width: 100%;
+}
+
+.faq {
+  position: relative;
+  background-color: aliceblue;
+  width: 80%;
+  border: 1px solid #c59d5f;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 300ms ease;
+  /* sluzi i kod preklapanja u DOM */
+  overflow: hidden;
+}
+
+.faq.active {
+  background-color: mediumturquoise;
+  box-shadow: 0 15px 5px rgba(0, 0, 0, 0.8), 10px 0px 5px rgba(182, 12, 12, 0.8);
+}
+
+.faq.active::before,
+.faq.active::after {
+  /* Sintaksa za font Awesome */
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  /* Sintaksa za font Awesome */
+  color: #28a746;
+  font-size: 6rem;
+  position: absolute;
+  opacity: 0.5;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: #49a6e9;
+  top: -30px;
+  left: -20px;
+  transform: rotateY(180deg);
+}
+
+.faq-title {
+  margin: 0 35px 0 0;
+  color: magenta;
+}
+
+.faq-text {
+  display: none;
+  margin: 30px 0 0;
+  color: #222;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+}
+
+.faq-toggle:focus {
+  outline: none;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.faq.active .faq-toggle .fa-times {
+  display: block;
+  color: #fff;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
   display: none;
 }

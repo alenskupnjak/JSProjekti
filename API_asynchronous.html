@@ -6,44 +6,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Asynchronous JavaScript</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #686de0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+      padding: 50px 20px;
+      text-align: center;
+      max-width: 100%;
+      width: 600px;
+    }
+
+    h3 {
+      margin: 0;
+      opacity: 0.5;
+      letter-spacing: 2px;
+    }
+
+    .joke {
+      font-size: 30px;
+      letter-spacing: 1px;
+      line-height: 40px;
+      margin: 50px auto;
+      max-width: 500px;
+    }
+
+    .btn {
+      background-color: #9f68e0;
+      color: #fff;
+      border: 0;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+      padding: 14px 40px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn:focus {
+      outline: 0;
+    }
+  </style>
+
 </head>
 
 <body>
   <h1>Asynchronous JavaScript</h1>
+  <div class="container">
+    <h3>Don't Laugh Challenge</h3>
+    <div id="joke" class="joke">// Joke goes here</div>
+    <button id="jokeBtn" class="btn">Get Another Joke</button>
+
+  </div>
+
+
+
   <script>
-    // const second = () => {
-    //     setTimeout(() => {
-    //         console.log('Async Hey there');
-    //     }, 2000);
-    // }
+    const second = () => {
+      setTimeout(() => {
+        console.log('Async Hey there');
+      }, 2000);
+    }
 
-    // const first = () => {
-    //     console.log('Hey there');
-    //     second();
-    //     console.log('The end');
-    // }
+    const first = () => {
+      console.log('Hey there');
+      second();
+      console.log('The end');
+    }
 
-    // first();
+    first();
 
-    // function getRecipe() {
-    //     setTimeout(() => {
-    //         const recipeID = [523, 883, 432, 974];
-    //         console.log(recipeID);
+    // ************************************************
+    function getRecipe() {
+      setTimeout(() => {
+        const recipeID = [523, 883, 432, 974];
+        console.log(recipeID);
 
-    //         setTimeout(id => {
-    //             const recipe = {title: 'Fresh tomato pasta', publisher: 'Jonas'};
-    //             console.log(`${id}: ${recipe.title}`);
+        setTimeout(id => {
+          const recipe = { title: 'Fresh tomato pasta', publisher: 'Jonas' };
+          console.log(`${id}: ${recipe.title}`);
 
-    //             setTimeout(publisher => {
-    //                 const recipe2 = {title: 'Italian Pizza', publisher: 'Jonas'};
-    //                 console.log(recipe);
-    //             }, 1500, recipe.publisher);
+          setTimeout(publisher => {
+            const recipe2 = { title: 'Italian Pizza', publisher: 'Jonas' };
+            console.log(recipe);
+          }, 1500, recipe.publisher);
 
-    //         }, 1500, recipeID[2]);
+        }, 1500, recipeID[2]);
 
-    //     }, 1500);
-    // }
-    // getRecipe();
+      }, 1500);
+    }
+    getRecipe();
 
     // const getIDs = new Promise((resolve, reject) => {
     //     setTimeout(() => {
@@ -239,6 +314,48 @@
 
     GoogleFetch();
 
+
+    // ***********************************
+    const jokeEl = document.getElementById('joke')
+    const jokeBtn = document.getElementById('jokeBtn')
+
+    jokeBtn.addEventListener('click', generateJoke)
+
+    generateJoke()
+
+    // USING ASYNC/AWAIT
+    async function generateJoke() {
+      const config = {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
+      }
+
+      const res = await fetch('https://icanhazdadjoke.com', config)
+
+      const data = await res.json()
+
+      jokeEl.innerHTML = data.joke
+    }
+
+    // *******************************
+    // USING .then()
+    function generateJokeTHEN() {
+      const config = {
+        headers: {
+          Accept: 'application/json',
+        },
+      }
+
+      fetch('https://icanhazdadjoke.com', config)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+
+        })
+    }
+    generateJokeTHEN()
 
 
   </script>
