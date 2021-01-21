@@ -17,10 +17,9 @@ body {
   background-size: cover;
   background-position: center center;
   height: 100%;
-  color: #fff;
+  color: aliceblue;
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
-  /* margin: 0; */
   /* overflow: hidden; */
 }
 
@@ -32,8 +31,8 @@ body::after {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 1280px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 body * {
@@ -47,21 +46,18 @@ body * {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  width: 1000px;
+  width: 80%;
+  height: 100%;
 }
 
 .textcss {
   /* padding: 10px; */
- /* height: 10vh; */
- color: #fff !important;
- font-size: 2rem;
- 
+  /* height: 10vh; */
+  color: #fff !important;
+  font-size: 2rem;
 }
 
-
-
 /* ******************************** */
-
 /* Pauza */
 .timer {
   margin-top: 2rem;
@@ -105,8 +101,8 @@ body * {
   font-size: 2rem;
   text-transform: uppercase;
   /* background: rgba(0,0,0,0.5); */
-  border-bottom: 3px solid rgba(0,0,0,0.2);
-  border-right: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1rem;
   font-family: 'Inconsolata', monospace;
 }
@@ -126,7 +122,7 @@ body * {
   font-size: 2rem;
   margin: 0;
   color: white;
-  text-shadow: 4px 4px 0 rgba(0,0,0,0.05);
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 .display-time-end {
@@ -135,44 +131,37 @@ body * {
 }
 
 .timer form {
-  flex:1;
+  flex: 1;
 }
 
 .unos {
   width: 200px;
   font-size: 1.5rem;
-  background: #EFEFEF;
+  background: #efefef;
 }
-
-
-
 
 /* ************************** */
 /* Clock */
-.container .clock {
+.clock {
   display: flex;
   /* position: relative; */
   text-align: center;
-  /* margin-top: rem ; */
   margin: auto;
   padding: 1rem;
   width: 25rem;
   height: 25rem;
-  border-radius:50%;
+  border-radius: 50%;
   border: 20px solid goldenrod;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow:
-  0 0 0 4px rgba(0,0,0,0.1),
-  inset 0 0 0 3px #EFEFEF,
-  inset 0 0 10px black,
-  0 0 10px rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .clock-face {
   position: relative;
   width: 100%;
   height: 100%;
-  /* transform: translateY(-3px); */
+  transform: translateY(-3px);
 }
 
 .kazaljka {
@@ -183,22 +172,21 @@ body * {
   top: 50%;
   transform-origin: 100%;
   transform: rotate(90deg);
-  transition: all 100ms;
+  transition: 100ms;
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
-.sat {
+/* ******************************************** */
+/* SAT ODBROJAVANJE */
+.odbrojavanje-sat {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  margin: auto;
+  /* margin: auto; */
+  /* height: 100%; */
+  /* width: 100%; */
 }
-
-/* .minuta {
-  color: red;
-  background-color: red;
-} */
 
 h1 {
   font-size: 60px;
@@ -208,8 +196,8 @@ h1 {
 .year {
   margin-top: 1rem;
   font-size: 200px;
-  z-index: -1;
-  opacity: 0.2;
+  /* z-index: -1; */
+  opacity: 0.3;
   /* position: absolute; */
   /* bottom: 20px; */
   /* left: 50%; */
@@ -218,7 +206,7 @@ h1 {
 
 .countdown {
   display: flex;
-  margin: auto ;
+  margin: auto;
   display: none;
   transform: scale(2);
 }
@@ -235,26 +223,6 @@ h1 {
 .time h2 {
   margin: 0 0 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 500px) {
   h1 {

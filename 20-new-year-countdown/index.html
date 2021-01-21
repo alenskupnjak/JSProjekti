@@ -6,17 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
- 
+
   <title>New Year Countdown</title>
 </head>
 
 <body>
+  <img src="./img/spinner.gif" alt="Loading..." id="loading" class="loading" />
   <div class="container">
     <div class="textcss">
-      <h2><a href="script.js" target="_blank">JS</a></h2>
+      <h2><a href="script.js" target="_blank">JS</a> -- <a href="style.css" target="_blank">CSS</a>    </h2>
     </div>
 
-    <!-- pauza -->
+    <!-- PAUZA -->
     <div class="timer">
       <div class="timer-controls">
         <button data-time="20" class="timer-button">20 sec</button>
@@ -25,7 +26,7 @@
         <button data-time="1200" class="timer-button">20 min</button>
         <button data-time="3600" class="timer-button">1 sat</button>
         <form name="customForm" id="custom">
-          <input type="text"  class="unos" name="minutes" placeholder="Upisi Minute">
+          <input type="text" class="unos" name="minutes" placeholder="Upisi Minute">
         </form>
       </div>
       <div class="display">
@@ -33,7 +34,6 @@
         <div class="display-time-end"></div>
       </div>
     </div>
-
 
 
     <!-- Clock -->
@@ -47,7 +47,7 @@
 
 
     <!-- Odbrojavanje -->
-    <div class="sat">
+    <div class="odbrojavanje-sat">
       <h1>New Year Countdown</h1>
       <div id="countdown" class="countdown">
         <div class="time">
@@ -68,11 +68,11 @@
         </div>
       </div>
       <div id="year" class="year"></div>
-
     </div>
-    
+
+
   </div>
-  <img src="./img/spinner.gif" alt="Loading..." id="loading" class="loading" />
+
 
   <script src="script.js"></script>
 </body>

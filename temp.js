@@ -122,10 +122,55 @@ console.log(person);
 
 let person1 = person;
 let person2 = { ...person };
-console.log(person1); 
-console.log(person2); 
+console.log(person1);
+console.log(person2);
 
 person.name = 'konj';
-console.log('person',person);
-console.log('person1',person1);
-console.log('person2',person2); 
+console.log('person', person);
+console.log('person1', person1);
+console.log('person2', person2);
+
+// **************************************
+function vowelsAndConsonants(s) {
+  console.log(s);
+  console.log(s.split);
+
+  s.split('').forEach((slovo) => {
+    if (slovo === 'a') {
+      console.log(slovo);
+    } else if (slovo === 'e') {
+      console.log(slovo);
+    } else if (slovo === 'i') {
+      console.log(slovo);
+    } else if (slovo === 'o') {
+      console.log(slovo);
+    } else if (slovo === 'u') {
+      console.log(slovo);
+    }
+  });
+  s.split('').forEach((slovo) => {
+    if (
+      slovo !== 'a' &&
+      slovo !== 'e' &&
+      slovo !== 'i' &&
+      slovo !== 'o' &&
+      slovo !== 'u'
+    ) {
+      console.log(slovo);
+    }
+  });
+}
+
+vowelsAndConsonants('javascriptloops');
+
+function obrni(s) {
+  try {
+    let rezultat = s.split('').reverse().join('');
+    console.log(rezultat);
+  } catch {
+    console.log('error');
+    console.log(s);
+  }
+}
+
+obrni(Number(123456));

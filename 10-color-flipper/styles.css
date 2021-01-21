@@ -3,7 +3,7 @@
 Fonts
 ===============
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
 
 /*
 =============== 
@@ -43,8 +43,8 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Open Sans', sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
@@ -163,7 +163,7 @@ nav {
   align-items: center;
   box-shadow: var(--dark-shadow);
 }
-.nav-center {
+nav .nav-center {
   width: 90vw;
   max-width: var(--fixed-width);
   margin: 0 auto;
@@ -171,11 +171,11 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
-.nav-center h4 {
+nav .nav-center h4 {
   margin-bottom: 0;
   color: var(--clr-primary-5);
 }
-.nav-links {
+nav .nav-links {
   display: flex;
 }
 nav a {
@@ -231,4 +231,43 @@ main {
 .btn-hero:hover {
   color: var(--clr-white);
   background: var(--clr-black);
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+}
+
+/* Brojač */
+
+.brojac-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #8e44ad;
+  font-family: 'Roboto';
+  color: #fff;
+  padding: 2rem;
+  margin: 0 20px;
+  width: 80%;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 30px 50px;
+}
+
+.counter {
+  font-size: 4rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 580px) {
+  .brojac-container {
+    flex-direction: column;
+  }
 }

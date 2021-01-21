@@ -1,7 +1,7 @@
 // Pauza
 const timerDisplay = document.querySelector('.display-time-left');
 const krajPauze = document.querySelector('.display-time-end');
-const buttons = document.querySelectorAll('[data-time]')
+const buttons = document.querySelectorAll('[data-time]');
 
 let odbrojavanje;
 
@@ -24,8 +24,6 @@ function timer(sekunde) {
   console.log({ sada, tada });
 }
 
-
-
 function preostaloVrijeme(sekunde) {
   const minute = Math.floor(sekunde / 60);
   preostaleSekunde = sekunde % 60;
@@ -40,35 +38,32 @@ function displayEndTime(timestamp) {
   const end = new Date(timestamp);
   const minute = end.getMinutes();
   const sati = end.getHours();
-  krajPauze.textContent= `Vracam se u ${sati}:${minute <0 ? '0':''}${minute}h`
+  krajPauze.textContent = `Vracam se u ${sati}:${
+    minute < 0 ? '0' : ''
+  }${minute}h`;
   // console.log(end.getSeconds(), end.getMinutes(), end.getHours());
 }
 
 function startTimer(e) {
   console.log(e.target);
   console.log(e.target.dataset.time);
-  let sekunde = parseInt( e.target.dataset.time)
-  console.log({sekunde});
-  
-  console.log(typeof(sekunde));
+  let sekunde = parseInt(e.target.dataset.time);
+  console.log({ sekunde });
+  console.log(typeof sekunde);
   timer(sekunde);
-  
 }
 
+buttons.forEach((button) => {
+  button.addEventListener('click', startTimer);
+});
 
-buttons.forEach(button => {
-  button.addEventListener('click',startTimer)
-})
-
-document.customForm.addEventListener('submit', (e)=>{
-  e.preventDefault()
-  mins = e.target.minutes.value
+document.customForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  mins = e.target.minutes.value;
   timer(mins * 60);
   console.log(e);
   // e.target.reset()
-})
-
-
+});
 
 
 // *****************************************
@@ -102,14 +97,8 @@ function setSat(e) {
   // console.log({sat, minuta, sekunda});
 }
 
+// Odbrojavamo svaku sekundu
 setInterval(setSat, 1000);
-
-
-
-
-
-
-
 
 // *****************************
 // ODBROJAVANJE nova godina

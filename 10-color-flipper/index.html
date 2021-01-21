@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color Flipper || Simple</title>
 
-    <!-- styles -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="nav-center">
-        <h4>color flipper</h4>
-        <ul class="nav-links">
-          <li><a href="index.html">simple</a></li>
-          <li><a href="hex.html">hex</a></li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/165d179615.js" crossorigin="anonymous"></script>
+  <title>Color Flipper || Simple</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-center">
+      <h4>color flipper</h4>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">simple</a></li>
+        <li><a href="hex.html">hex</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="brojac-container">
+      <div class="counter-container">
+        <i class="fab fa-twitter fa-3x"></i>
+        <div class="counter" data-target="12000"></div>
+        <span>Twitter folowers</span>
       </div>
-    </nav>
-    <main>
-      <div class="container">
-        <h2>background color : <span class="color">#f1f5f8</span></h2>
-        <button class="btn btn-hero" id="btn">click me</button>
+      <div class="counter-container">
+        <i class="fab fa-youtube fa-3x"></i>
+        <div class="counter" data-target="5000"></div>
+        <span>Youtube folowers</span>
       </div>
-    </main>
-    <!-- javascript -->
-    <script src="app.js"></script>
-  </body>
+      <div class="counter-container">
+        <i class="fab fa-facebook fa-3x"></i>
+        <div class="counter" data-target="2000"></div>
+        <span>Facebook folowers</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>background color : <span class="color">#f1f5f8</span></h2>
+      <button class="btn btn-hero" id="btn">SIMPLE - click me</button>
+    </div>
+  </main>
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
 </html>
