@@ -9,7 +9,7 @@ counters.forEach((counter) => {
 
     if (brojac < target) {
       counter.innerText = `${Math.ceil(brojac)}`;
-      setTimeout(updateCounter, 2);
+      setTimeout(updateCounter, 1);
     } else {
       counter.innerText = target;
     }
@@ -17,6 +17,10 @@ counters.forEach((counter) => {
 
   updateCounter();
 });
+
+
+
+// 
 // =======================================================
 // Boje
 const colors = ['green', 'red', 'rgba(133,122,200)', '#f15025'];
