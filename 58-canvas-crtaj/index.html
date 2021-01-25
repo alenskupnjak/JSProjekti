@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
 
-  <title>HTML5 Canvas</title>
+  <title>HTML5 Canvas. Canvas drawing</title>
 </head>
+
 <body>
-  <h2><a href="app.js" target="_blank">JS</a></h2>
-  <h2><a href="style.css" target="_blank">CSS</a></h2>
-  <h1>Stisni miš i crtaj....</h1>
-<canvas id="draw" width="800" height="800"></canvas>
-<script src="app.js"></script>
+
+  <h2><a href="app.js" target="_blank">JS</a> -- <a href="style.css" target="_blank">CSS</a></h2>
+
+
+  <div class="graficka-ploca">
+    <canvas id="draw-grafika" width="600" height="600"></canvas>
+    <div class="toolbox">
+      <button id="decrease">-</button>
+      <span id="size">10</span>
+      <button id="increase">+</button>
+      <input type="color" id="color">
+      <button id="clear">X</button>
+    </div>
+  </div>
+
+
+  <!-- Canvas drugi -->
+  <div>
+    <h1>Stisni miš i crtaj....</h1>
+    <canvas id="draw" width="500" height="500"></canvas>
+  </div>
+  <script src="app.js"></script>
 
 </body>
+
 </html>
