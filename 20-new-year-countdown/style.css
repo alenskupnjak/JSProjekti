@@ -172,9 +172,15 @@ body * {
   top: 50%;
   transform-origin: 100%;
   transform: rotate(90deg);
-  transition: 100ms;
+  transition: 200ms;
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
+
+.kazaljka.sekunda {
+  background-color: red;
+}
+
+
 
 /* ******************************************** */
 /* SAT ODBROJAVANJE */

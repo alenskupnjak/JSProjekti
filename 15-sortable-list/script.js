@@ -1,3 +1,64 @@
+const fill = document.querySelector('.fill');
+const empty = document.querySelectorAll('.empty');
+
+fill.addEventListener('dragstart', drgStart);
+fill.addEventListener('dragend', drgEnd);
+
+for (const data of empty) {
+  data.addEventListener('drop', Drop);
+  data.addEventListener('dragenter', drgEnter);
+  data.addEventListener('dragover', drgOver);
+  data.addEventListener('dragleave', drgLeave);
+}
+
+// Drag START
+function drgStart() {
+  console.log('drag START',this);
+  // console.log(this.classList, this.className);
+  this.classList.add('hold');
+  setTimeout(() => {
+    this.classList.add('nevidljiv');
+  }, 500);
+}
+
+// DRAGEND
+function drgEnd() {
+  console.log(this);
+  this.classList.remove('nevidljiv')
+  console.log('drag END');
+}
+
+// Drag Over
+function drgOver(e) {
+  console.log('drag Over');
+  e.preventDefault()
+}
+
+function drgEnter(e) {
+  this.classList.add('hovered')
+  console.log('drag Enter', this);
+  e.preventDefault()
+}
+
+function drgLeave(e) {
+  console.log('drag Leave',this);
+  console.log('drag Leave',this.classList);
+  this.classList.remove('hovered')
+  console.log('Obrisao sam u programu, u domu jos stoji');
+  e.preventDefault()
+}
+
+function Drop() {
+  this.classList.remove('hovered')
+  fill.classList.remove('hold');
+  fill.classList.remove('nevidljiv');
+  console.log('drag DROP',this);
+  this.appendChild(fill)
+}
+
+//  =======================================================
+// **********************************************************
+// <h1>10 Richest People</h1>
 const draggable_list = document.getElementById('draggable-list');
 const check = document.getElementById('check');
 
@@ -28,10 +89,10 @@ function createList() {
     .sort((a, b) => a.sort - b.sort)
     .map((a) => a.value)
     .forEach((person, index) => {
-      // kreiramo element
+      // kreiramo element svaki pojedinacno
       const listItem = document.createElement('li');
 
-      // definiramo element
+      // definiramo atribut
       listItem.setAttribute('data-index', index);
 
       listItem.innerHTML = `
@@ -53,7 +114,7 @@ function createList() {
 }
 
 function dragStart(e) {
-  console.log('Event: ', 'dragstart');
+  console.log('Event: dragstart');
   dragStartIndex = +this.closest('li').getAttribute('data-index');
   let dragStartIndex1 = +e.target.closest('li').getAttribute('data-index');
   console.log({ dragStartIndex, dragStartIndex1 });
@@ -61,28 +122,50 @@ function dragStart(e) {
 
 function dragEnter(e) {
   console.log('Event: dragenter', e.target);
-  this.classList.add('over');
+
+  if (!e.target.classList.contains('person-name')) {
+    console.log('-------------');
+
+    document.querySelectorAll('.draggable-list li').forEach((lista) => {
+      lista.classList.remove('odlazim');
+      // lista.classList.remove('over');
+    });
+  } else {
+    console.log('preskocio remove(odlazim)');
+  }
+
+  if (e.target.classList.contains('draggable')) {
+    this.classList.add('over');
+  }
 }
 
-function dragLeave() {
-  console.log('Event: ', 'dragleave');
-  this.classList.remove('over');
+function dragLeave(e) {
+  console.log(
+    'Event: dragleave',
+    e.target,
+    'atribut=',
+    e.target.getAttribute('data-index')
+  );
+
+  if (e.target.getAttribute('data-index')) {
+    this.classList.remove('over');
+    this.classList.add('odlazim');
+  }
 }
 
 function dragOver(e) {
-  // console.log(e.target);
-
-  filterEvent(printaj('dragOver'), 2000);
+  filterEvent(console.log('dragOver'), 2000);
   // console.log(this, arguments);
-
-  // console.log('Event: ', 'dragover');
   e.preventDefault();
 }
 
 function dragDrop() {
-  console.log('Event: ', 'drop');
+  console.log('Event: drop');
   const dragEndIndex = +this.getAttribute('data-index');
   swapItems(dragStartIndex, dragEndIndex);
+  document.querySelectorAll('.draggable-list li').forEach((lista) => {
+    lista.classList.remove('odlazim');
+  });
 
   this.classList.remove('over');
 }
@@ -112,6 +195,7 @@ function checkOrder() {
   });
 }
 
+// Dodavanje Eventlistenera
 function addEventListeners() {
   const draggables = document.querySelectorAll('.draggable');
   const dragListItems = document.querySelectorAll('.draggable-list li');
@@ -129,6 +213,7 @@ function addEventListeners() {
   });
 }
 
+// Provjera pravilnog rasporeda
 check.addEventListener('click', checkOrder);
 
 // FILTRIRA DOGADAJ
@@ -143,8 +228,4 @@ function filterEvent(funkcijaIzvana, wait = 50) {
     }, wait);
     console.clear();
   };
-}
-
-function printaj(x) {
-  console.log(x);
 }

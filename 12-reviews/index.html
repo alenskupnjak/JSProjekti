@@ -1,53 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Starter</title>
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
 
-    <!-- styles -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main>
-      <section class="container">
-        <!-- title -->
-        <div class="title">
-          <h2>our reviews</h2>
-          <div class="underline"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background. Rewiew</title>
+  <!-- font-awesome -->
+  <script src="https://kit.fontawesome.com/165d179615.js" crossorigin="anonymous"></script>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main>
+
+    <div class="body2">
+      <div class="slider-container">
+        <div class="slide active" style="
+              background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+            ">
         </div>
-        <!-- review -->
-        <article class="review">
-          <div class="img-container">
-            <img src="person-1.jpeg" id="person-img" alt="" />
-          </div>
-          <h4 id="author">sara jones</h4>
-          <p id="job">ux designer</p>
-          <p id="info">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-            asperiores debitis incidunt, eius earum ipsam cupiditate libero?
-            Iste, doloremque nihil?
-          </p>
-          <!-- prev next buttons-->
-          <div class="button-container">
-            <button class="prev-btn">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="next-btn">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-          <!-- random button -->
-          <button class="random-btn">surprise me</button>
-        </article>
-      </section>
-    </main>
-    <!-- javascript -->
-    <script src="app.js"></script>
-  </body>
+        <div class="slide" style="
+              background-image: url('https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80');
+            ">
+        </div>
+
+        <div class="slide" style="
+              background-image: url('https://images.unsplash.com/photo-1495467033336-2effd8753d51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+            ">
+        </div>
+
+        <div class="slide" style="
+              background-image: url('https://images.unsplash.com/photo-1522735338363-cc7313be0ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80');
+            ">
+        </div>
+
+        <div class="slide" style="
+              background-image: url('https://images.unsplash.com/photo-1559087867-ce4c91325525?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+            ">
+        </div>
+
+        <button class="arrow left-arrow" id="left">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <button class="arrow right-arrow" id="right">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+
+      </div>
+    </div>
+
+
+    <!-- REWIEW -->
+    <section class="container-rew">
+      <!-- title -->
+      <div class="title">
+        <h2>our reviews <a href="app.js" target="_blank" style="color: red;">JS</a> -<a href="styles.css" target="_blank" style="color: red;">CSS</a> </h2>
+        <div class="underline"></div>
+      </div>
+      <!-- review -->
+      <article class="review">
+        <div class="img-container">
+          <img src="person-1.jpeg" id="person-img" alt="" />
+        </div>
+        <h4 id="author">sara jones</h4>
+        <p id="job">ux designer</p>
+        <p id="info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+          asperiores debitis incidunt, eius earum ipsam cupiditate libero?
+          Iste, doloremque nihil?
+        </p>
+        <!-- prev next buttons-->
+        <div class="button-container">
+          <button class="prev-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <!-- random button -->
+        <button class="random-btn">surprise me</button>
+      </article>
+    </section>
+  </main>
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
 </html>

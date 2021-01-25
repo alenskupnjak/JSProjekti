@@ -10,15 +10,13 @@
 }
 
 html {
-  transition: all 0.5s ease-in;
+  transition: all 500ms ease-in;
 }
+
 
 html.dark {
   --primary-color: #fff;
   --secondary-color: #333;
-}
-
-html.dark {
   background-color: #111;
   color: var(--primary-color);
 }
@@ -59,6 +57,7 @@ body {
   position: relative;
   width: 200px;
   height: 200px;
+  background-color: antiquewhite;
 }
 
 .needle {
@@ -69,20 +68,21 @@ body {
   height: 65px;
   width: 3px;
   transform-origin: bottom center;
-  transition: all 0.5s ease-in;
+  transition: all 500ms ease-in;
 }
 
 .needle.hour {
-  transform: translate(-50%, -100%) rotate(0deg);
+  transform: translate(-50%, -100%) rotate(20deg);
+  background-color: blue;
 }
 
 .needle.minute {
-  transform: translate(-50%, -100%) rotate(0deg);
-  height: 100px;
+  transform: translate(-50%, -100%) rotate(30deg);
+  height: 90px;
 }
 
 .needle.second {
-  transform: translate(-50%, -100%) rotate(0deg);
+  transform: translate(-50%, -100%) rotate(40deg);
   height: 100px;
   background-color: #e74c3c;
 }
@@ -100,7 +100,7 @@ body {
 
 .center-point::after {
   content: '';
-  background-color: var(--primary-color);
+  background-color: green;
   width: 5px;
   height: 5px;
   position: absolute;
@@ -112,12 +112,13 @@ body {
 
 .time {
   font-size: 60px;
+  color: #e74c3c;
 }
 
 .date {
   color: #aaa;
-  font-size: 14px;
-  letter-spacing: 0.3px;
+  font-size: 1rem;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 
@@ -125,12 +126,15 @@ body {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border-radius: 50%;
-  height: 18px;
-  width: 18px;
-  display: inline-flex;
+  padding: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
+  text-align: center;
   line-height: 18px;
-  transition: all 0.5s ease-in;
-  font-size: 12px;
+  transition: all 500ms ease-in;
+  font-size: 1rem;
+  color: #e74c3c;
 }
