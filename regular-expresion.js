@@ -37,6 +37,10 @@ re = /hello/i;
 
 // Metacharacter Symbols
 
+str = "#pokusnitext";
+re = /#/i; // Zamjeni # sa blank
+console.log(re.test(str), re.exec(str),str.replace(re, ''));
+
 str = "hello world";
 re = /^h/i; // Must start with h
 console.log(re.test(str), re.exec(str));

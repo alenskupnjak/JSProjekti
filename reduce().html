@@ -48,7 +48,7 @@
 
   const poljePrimjer = [{ price: 10.99 }, { price: 5.79 }, { price: 29.99 }, { price: 12.12 }];
   sum = poljePrimjer.reduce((sumVal, curVal) => sumVal + curVal.price, 0);
-  console.log(poljePrimjer);
+  console.table(poljePrimjer);
   console.log('Suma= ' + sum.toFixed(2));
 
 
@@ -87,9 +87,17 @@
     return obj
   }, {})
 
-  console.log(podaci);
+  console.table(podaci);
   
 
+  const mojObjekt = {
+    a: function() {
+      console.log(this)
+    }
+  }
+
+  mojObjekt.a()
+  
 
 
 

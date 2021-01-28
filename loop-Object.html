@@ -19,22 +19,24 @@
     key4: "value4"
   }
 
+  // Izvjegavati ovu vrstu petlje usporava javascrip engine!
   for (let data in objektMoj) {
     console.log(data);
   }
 
-  //  Keys
+  // Keys
   const keys = Object.keys(objektMoj)
-  console.log(keys);
+  console.log(keys , typeof keys);
+  // console.log(keys);
 
 
-  //  Value
+  // Value
   const vrijednosti = Object.values(objektMoj)
   console.log(vrijednosti, typeof (vrijednosti));
 
   // Entries
   const entries = Object.entries(objektMoj);
-  console.log(entries);
+  console.log(entries, typeof (entries));
   
 
 

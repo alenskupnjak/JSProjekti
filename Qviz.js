@@ -1,4 +1,4 @@
-function Kviz(pitanje, odgovor, provjera) {
+function KvizFunction(pitanje, odgovor, provjera) {
   this.pitanje = pitanje;
   this.odgovor = odgovor;
   this.provjera = provjera;
@@ -34,37 +34,96 @@ function Kviz(pitanje, odgovor, provjera) {
 //   }
 // };
 
-let p1 = new Kviz(
+let p1 = new KvizFunction(
   'Koji je glavni grad Hrvatske?',
   ['Osjek', 'Split', 'Zagreb'],
   2
 );
-let p2 = new Kviz(
+let p2 = new KvizFunction(
   'Koji je glavni grad Njemačke?',
   ['Minhen', 'Berlin', 'Frankfurt'],
   1
 );
-let p3 = new Kviz(
+let p3 = new KvizFunction(
   'Koji je glavni grad Francuske?',
   ['Pariz', 'Toluose', 'Cann'],
   0
 );
-let p4 = new Kviz(
+let p4 = new KvizFunction(
   'Koji je glavni grad Austrije?',
   ['Ljubljana', 'Zagreb', 'Beč'],
   2
 );
 
-let svaPitanja = [p1, p2, p3, p4];
-let n = Math.floor(Math.random() * svaPitanja.length);
+let svaPitanjaFunction = [p1, p2, p3, p4];
+let n = Math.floor(Math.random() * svaPitanjaFunction.length);
 
-svaPitanja[n].upitnik();
+svaPitanjaFunction[n].upitnik();
 const odgovor = parseInt(prompt('Odaberi točan odgovor'));
-svaPitanja[n].provjeraOdgovora(odgovor);
+svaPitanjaFunction[n].provjeraOdgovora(odgovor);
 
+
+
+//  CLASS
+class KvizClass  {
+  constructor (pitanje, odgovor, provjera) {
+    this.pitanje = pitanje;
+    this.odgovor = odgovor;
+    this.provjera = provjera;
+  }
+
+  upitnik () {
+    console.log(this.pitanje);
+    for (let i = 0; i < this.odgovor.length; i++) {
+      console.log(i + '-' + this.odgovor[i]);
+    }
+  };
+
+  provjeraOdgovora () {
+    if (odgovor === this.provjera) {
+      console.log('Dali ste tocan odgovor!');
+    } else {
+      console.log('Netočan odgovor!');
+    }
+  };
+}
+
+// Kviz.prototype.upitnik = function () {
+//   console.log(this.pitanje);
+//   for (let i = 0; i < this.odgovor.length; i++) {
+//     console.log(i + '-' + this.odgovor[i]);
+//   }
+// };
+
+// Kviz.prototype.provjeraOdgovora = function (odgovor) {
+//   if (odgovor === this.provjera) {
+//     console.log('Dali ste tocan odgovor!');
+//   } else {
+//     console.log('Netočan odgovor!');
+//   }
+// };
+
+p1 = new KvizClass('Class - Koji je glavni grad Hrvatske?',['Osjek', 'Split', 'Zagreb'],2);
+p2 = new KvizClass('Class - Koji je glavni grad Njemačke?',['Minhen', 'Berlin', 'Frankfurt'],1);
+p3 = new KvizClass('Class - Koji je glavni grad Francuske?',['Pariz', 'Toluose', 'Cann'],0);
+p4 = new KvizClass('Class - Koji je glavni grad Austrije?',['Ljubljana', 'Zagreb', 'Beč'],2);
+
+let svaPitanjaClass = [p1, p2, p3, p4];
+n = Math.floor(Math.random() *  svaPitanjaClass .length);
+
+svaPitanjaClass[n].upitnik();
+svaPitanjaClass[n].provjeraOdgovora(parseInt(prompt('Odaberi točan odgovor')));
+
+
+
+
+
+
+//  Zadatak sa interneta
 // *******************************
-//  pronadi najveci broj s kojim su djeljiva dva nroja
+//  
 
+console.log(' **** Pronadi najveci broj s kojim su dva broja djeljiva dva broja ***');
 function nadiBroj(a, b) {
   let min, max, rezultat;
   if (a > b) {
@@ -86,7 +145,7 @@ function nadiBroj(a, b) {
   return 'Broj =' + rezultat;
 }
 
-console.log(nadiBroj(15, 2055));
-console.log(nadiBroj(4, 2));
-console.log(nadiBroj(201, 21));
-console.log(nadiBroj(20, 30));
+console.log('01-',nadiBroj(15, 2055));
+console.log('02-',nadiBroj(4, 2));
+console.log('03-',nadiBroj(201, 21));
+console.log('04-',nadiBroj(20, 30));

@@ -1,6 +1,8 @@
 const counters = document.querySelectorAll('.counter');
 
 counters.forEach((counter) => {
+
+
   let brojac = 0;
   function updateCounter() {
     const target = +counter.getAttribute('data-target');
@@ -16,6 +18,8 @@ counters.forEach((counter) => {
   }
 
   updateCounter();
+
+  
 });
 
 
