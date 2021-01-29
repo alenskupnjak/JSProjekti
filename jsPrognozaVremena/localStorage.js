@@ -2,7 +2,7 @@ class Storage {
   constructor() {
     this.grad;
     this.drzava;
-    this.defaultGrad = 'Zagreb';
+    this.defaultGrad = 'Sesvete';
     this.defaultDrzava = 'HR';
   }
 

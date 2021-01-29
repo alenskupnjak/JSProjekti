@@ -140,7 +140,7 @@ class UI {
   }
 
   // vračamo link ikone iz CSS direktorija prema opisu iz API
-  formirajIconu(vrijeme, dobaDanaIkona) {
+  formirajIconu(vrijeme, dobaDanaIkona) {  
     let day;
     //  https://developer.accuweather.com/sites/default/files/06-s.png
     switch (vrijeme) {
@@ -221,8 +221,9 @@ class UI {
         }
         break;
 
-      // default
-      default:
+
+        // default
+        default:
         console.log('nedefiniran:', vrijeme);
     }
     return day;
