@@ -36,10 +36,11 @@ body {
 }
 
 .user-form input::placeholder {
-  color: blue;
+  color: #bbb;
 }
 
 #main {
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,4 +50,68 @@ body {
 #main img {
   width: 100px;
   height: 100px;
+}
+
+.card {
+  display: flex;
+  padding: 2rem;
+  margin: 0 1.5rem;
+  font-size: 1rem;
+  border-radius: 15px;
+  color: rgba(0, 0, 0, 0.8);
+  width: 80%;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 10px solid #bbb;
+}
+
+.user-info {
+  color: #eee;
+  margin-left: 2rem;
+  width: 100%;
+
+}
+
+.user-info ul {
+  display: flex;
+  flex-direction: column;
+  /* overflow-wrap: break-word; */
+  color: blue;
+  list-style-type: none;
+  justify-content: space-between;
+  max-width: 400px;
+  width: 100;
+}
+
+.user-info ul li {
+  display: flex;
+  color: blue;
+  align-items: center;
+}
+
+.user-info ul li strong {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+
+.repo {
+  text-decoration: none;
+  /* background-color: magenta; */
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+}
+
+@media(max-width: 500px) {
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-form {
+    max-width: 400px;
+  }
 }

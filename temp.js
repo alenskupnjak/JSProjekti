@@ -73,7 +73,7 @@
 
 // console.log(giveMeTheCharacterNOW1());
 // console.log(giveMeTheCharacterNOW2());
-
+let koko = 'cccc'
 const number = 100;
 const string = 'Jay';
 let obj1 = {

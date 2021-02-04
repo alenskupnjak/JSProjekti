@@ -157,3 +157,5 @@ console.log(shrek.podatak);
 
 console.log({ Ogre }, { Elf });
 console.log(Ogre.prototype.isPrototypeOf(shrek));
+
+// "editor.fontFamily": "Consolas,'Monaco','Courier New'",

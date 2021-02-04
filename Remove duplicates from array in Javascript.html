@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove duplicates from array in Javascript</title>
+</head>
+
+<body>
+  <h1>Remove duplicates from array in Javascript</h1>
+</body>
+<script>
+
+  const polje = [0, 1, 20, 2, 4, 5, 6, 2, 8, 9, 1, 5, 17, 2];
+
+  console.log(polje.sort());
+
+  let b = []
+
+  let duljinaPolja = polje.length
+
+  for (let index = 0; index < duljinaPolja; index++) {
+    if (b.indexOf(polje[index]) === -1) {
+      console.log('xxx');
+
+      b.push(polje[index])
+    }
+  }
+
+  console.log(b);
+
+
+
+//  objekt nece dozvoliti
+  obj = {}
+  for (let i of polje) {
+    console.log(i);
+    obj[i] = true
+  }
+  let objekt = Object.keys(obj)
+  console.log(objekt);
+
+  let bSet = [... new Set(polje)]
+  console.log(bSet);
+  
+  
+
+
+
+
+
+
+</script>
+
+</html>
