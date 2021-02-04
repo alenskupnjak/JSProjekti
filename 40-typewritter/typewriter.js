@@ -66,17 +66,15 @@ class TypeWriter {
     this.txtElement = txtElement;
     this.poljeRijeci = poljeRijeci;
 
-    // text koji ce se mijenjati
-    this.txt = '';
-
     // inicijalno postavljamo na prvu rijec u polji
-    this.wordIndex = 0;
     this.cekajNaKrajuRijeci = parseInt(cekajNaKrajuRijeci, 10);
-    this.type();
-    
-    // inicijalno upisujemo text
-    this.isDeleting = false;
   }
+
+    // inicijalno upisujemo text
+    isDeleting = false;
+    txt = '';     // text koji ce se mijenjati
+    wordIndex = 0;
+
 
   type() {
     // trenutni index rijeci
@@ -123,7 +121,7 @@ class TypeWriter {
 
     // neprestano ponavlja
     setTimeout(() => {
-      return this.type();
+      this.type();
     }, typeSpeed);
   }
 }
@@ -142,5 +140,7 @@ function init() {
   // new Tipkac(txtElement, poljeRijeci, cekajNaKrajuRijeci);
 
   // class
-  new TypeWriter(txtElement, poljeRijeci, cekajNaKrajuRijeci);
+  const start = new TypeWriter(txtElement, poljeRijeci, cekajNaKrajuRijeci);
+  // pokrecemo type writer
+  start.type()
 }

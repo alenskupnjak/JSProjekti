@@ -5,8 +5,7 @@ body {
   height: 100vh;
   width: 80%;
   background: #333;
-  /* background: url('https://source.unsplash.com/random/560x560'); */
-  background: url('nature.jpg');
+  background: url('https://source.unsplash.com/random/560x560');
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
@@ -31,6 +30,13 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
 }
+
+
+
+a {
+  color: red;
+}
+
 
 h1,
 h2 {

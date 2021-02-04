@@ -74,9 +74,11 @@ class PersonES6 {
     this.job = job;
   }
 
+  pokus = 'Pokus text'
+
   calculateAge() {
     let age = new Date().getFullYear() - this.yearOfBirth;
-    console.log(age);
+    console.log(age, this.pokus);
   }
 
   pokus1() {
