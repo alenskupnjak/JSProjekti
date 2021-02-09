@@ -13,10 +13,10 @@
 <script>
 
   let objektMoj = {
-    key1: "value1",
-    key2: "value2",
-    key3: "value3",
-    key4: "value4"
+    key1: "value 01",
+    key2: "value 02",
+    key3: "value 03",
+    key4: "value 04"
   }
 
   // Izvjegavati ovu vrstu petlje usporava javascrip engine!
@@ -25,18 +25,30 @@
   }
 
   // Keys
-  const keys = Object.keys(objektMoj)
-  console.log(keys , typeof keys);
-  // console.log(keys);
+  console.log('*** Keys ***');
+  const keys = Object.keys(objektMoj).forEach(data=>{
+    console.log('key=',data);
+    
+  })
+  console.log(keys);
 
 
-  // Value
+  console.log('*** Values ***');
   const vrijednosti = Object.values(objektMoj)
-  console.log(vrijednosti, typeof (vrijednosti));
+  console.log(vrijednosti);
+  
+  vrijednosti.forEach(data => {
+    console.log(data);
+  })
 
-  // Entries
+
+  
+  console.log('*** Entries ***');
   const entries = Object.entries(objektMoj);
-  console.log(entries, typeof (entries));
+  console.log(entries);
+  entries.forEach(data=>{
+    console.log(data);
+  })
   
 
 
