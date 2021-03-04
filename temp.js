@@ -174,3 +174,72 @@ function obrni(s) {
 }
 
 obrni(Number(123456));
+
+
+
+
+
+
+let error = 'nekiText'
+let varijabla = error && {error:true,helperText:error}
+console.log(error,varijabla);
+
+error = 5
+varijabla = error && {error:true,helperText:error}
+console.log(error,varijabla);
+
+error = true
+varijabla = error && {error:true,helperText:error}
+console.log(error,varijabla);
+
+error = false
+varijabla = error && {error:true,helperText:error}
+console.log('false',varijabla);
+
+error = undefined
+varijabla = error && {error:true,helperText:error}
+console.log('undefined - ',varijabla);
+
+error = null
+varijabla = error && {error:true,helperText:error}
+console.log('null - ',varijabla);
+
+
+error = true
+if(error) {
+  console.log(' - prosao sam - '+ error)
+}
+
+error = 5
+if(error) {
+  console.log(' - prosao sam - '+ error)
+}
+
+error = 'text'
+if(error) {
+  console.log(' - prosao sam - '+ error)
+} else {
+  console.log('NE prolazi', error);
+}
+
+error = null
+if(error) {
+  console.log(' - prosao sam - '+ error)
+} else {
+  console.log('NE prolazi', error);
+}
+
+error = undefined
+if(error) {
+  console.log(' - prosao sam - '+ error)
+} else {
+  console.log('NE prolazi', error);
+}
+
+error = false
+if(error) {
+  console.log(' - prosao sam - '+ error)
+} else {
+  console.log('NE prolazi', error);
+}
+

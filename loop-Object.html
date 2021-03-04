@@ -26,9 +26,8 @@
 
   // Keys
   console.log('*** Keys ***');
-  const keys = Object.keys(objektMoj).forEach(data=>{
-    console.log('key=',data);
-    
+  const keys = Object.keys(objektMoj).forEach(data => {
+    console.log('key=', data);
   })
   console.log(keys);
 
@@ -36,21 +35,56 @@
   console.log('*** Values ***');
   const vrijednosti = Object.values(objektMoj)
   console.log(vrijednosti);
-  
+
   vrijednosti.forEach(data => {
     console.log(data);
   })
 
 
-  
+
   console.log('*** Entries ***');
   const entries = Object.entries(objektMoj);
   console.log(entries);
-  entries.forEach(data=>{
+  entries.forEach(data => {
     console.log(data);
   })
-  
 
+
+  let objA = {
+    key1: 2,
+    key2: 4,
+    key3: 3,
+    key4: 2
+  }
+  console.log('***  objA ***');
+  const novopolje = []
+  const entriesPodaci = Object.keys(objA).map(data => {
+    console.log(data);
+    // return data.map(x => {
+      for (let i = 0; i < objA[data]; i++) {
+        novopolje.push([data,1])
+        console.log(i);
+      }
+    // })
+    return data
+  })
+  console.log('01', entriesPodaci, novopolje );
+
+  // let indi
+  for (let indi = 0; indi < 5; indi++) {
+    console.log('ccc petlja-', indi);
+  }
+
+  novoObj ={...objA} 
+  const sum = Object.keys(novoObj).map(key=> {
+    return  novoObj[key]
+  }).reduce((prev,cur)=> {
+    return prev + cur
+  },1000)
+
+
+  console.log(sum);
+  
 
 
 

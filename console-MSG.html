@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Console Tricks!</title>
 </head>
+
 <body>
 
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
@@ -35,8 +37,21 @@
     // Info
     console.info('Crocodiles eat 3-4 people per year');
 
+    // Boje
+    console.info('%c Ja sam u boji', 'color:red;');
+
     // Testing
     const p = document.querySelector('p');
+
+    // timer
+    console.time('petlja')
+    let i = 0
+    while (i < 1000000) {
+      i++
+    }
+    console.timeEnd('petlja')
+
+    
 
     console.assert(p.classList.contains('ouch'), 'That is wrong!');
 
@@ -58,8 +73,11 @@
       console.groupEnd(`${dog.name}`);
     });
 
-    // counting
 
+
+
+
+    // counting
     console.count('Wes');
     console.count('Wes');
     console.count('Steve');
@@ -86,4 +104,5 @@
 
   </script>
 </body>
+
 </html>

@@ -22,6 +22,7 @@ nextBtTraka.addEventListener('click', (e) => {
   console.log(currentActive);
 });
 
+
 // PREVIOUS
 prevBtTraka.addEventListener('click', (e) => {
   currentActive--;
@@ -68,6 +69,21 @@ nextBtn.addEventListener('click', function () {
 
   counter++;
   carousel();
+});
+
+window.addEventListener('keydown', (e) => {
+  console.log('nextBtn', counter);
+  if (e.key === 'ArrowRight') {
+    counter++;
+    carousel();
+  }
+
+  if (e.key === 'ArrowLeft') {
+    counter--;
+    carousel();
+  }
+
+
 });
 
 prevBtn.addEventListener('click', function () {
