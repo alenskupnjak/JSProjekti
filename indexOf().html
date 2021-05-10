@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONCAT</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CONCAT</title>
-</head>
+  <body>
+    <h1>Index of</h1>
+  </body>
+  <script>
+    console.log("************* L 191  indexOf *******************");
+    polje = [
+      "sport",
+      3333,
+      "Cooking",
+      "slon",
+      "macka",
+      17,
+      "mis",
+      "Mirela",
+      "Ema",
+      124,
+      17,
+    ];
+    console.log("polje=" + polje);
 
-<body>
-  <h1>Index of</h1>
-
-</body>
-<script>
-
-console.log('************* L 191  indexOf *******************')
-polje =  ['sport', 3333, 'Cooking','slon','macka', 17, 'mis', 'Mirela', 'Ema', 124,17];
-console.log('polje=' + polje);
-
-console.log('Koji je index 17? Od pocetka krece  ' + polje.indexOf(17))
-console.log('Koji je index slon? Od pocetka krece  ' + polje.indexOf('slon'))
-console.log('Koji je index slon? Od kraja krece  ' + polje.lastIndexOf('slon'))
-
-
-
-
-
-</script>
-
+    console.log("Koji je index 17? Od pocetka krece  " + polje.indexOf(17));
+    console.log(
+      "Koji je index slon? Od pocetka krece  " + polje.indexOf("slon")
+    );
+    console.log(
+      "Koji je index slon? Od kraja krece  " + polje.lastIndexOf("slon")
+    );
+  </script>
 </html>

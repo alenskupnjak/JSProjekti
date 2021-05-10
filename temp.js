@@ -73,16 +73,16 @@
 
 // console.log(giveMeTheCharacterNOW1());
 // console.log(giveMeTheCharacterNOW2());
-let koko = 'cccc'
+let koko = "cccc";
 const number = 100;
-const string = 'Jay';
+const string = "Jay";
 let obj1 = {
-  value: 'obj1',
-  name: 'alen',
+  value: "obj1",
+  name: "alen",
 };
 
 let obj2 = {
-  value: 'obj2',
+  value: "obj2",
 };
 let obj3 = obj2;
 
@@ -91,12 +91,12 @@ function change(number, string, obj1, obj2) {
   console.log(string);
   console.log(typeof obj1);
   console.log(obj2);
-  console.log('*******************');
+  console.log("*******************");
   number = number * 10;
-  string = 'Pete';
-  obj1 = 'kiki';
+  string = "Pete";
+  obj1 = "kiki";
   console.log(typeof obj1);
-  obj2.value = 'obj2mis';
+  obj2.value = "obj2mis";
   console.log(number);
   console.log(string);
   console.log(obj1);
@@ -104,7 +104,7 @@ function change(number, string, obj1, obj2) {
 }
 
 change(number, string, obj1, obj2);
-console.log('+++++++++++++++++');
+console.log("+++++++++++++++++");
 //Guess the outputs here before you run the code:
 console.log(number);
 console.log(string);
@@ -114,8 +114,8 @@ console.log(obj3.value);
 
 let person = {
   age: 28,
-  name: 'alen',
-  hobi: ['sport', 'hodanje'],
+  name: "alen",
+  hobi: ["sport", "hodanje"],
 };
 
 console.log(person);
@@ -125,121 +125,113 @@ let person2 = { ...person };
 console.log(person1);
 console.log(person2);
 
-person.name = 'konj';
-console.log('person', person);
-console.log('person1', person1);
-console.log('person2', person2);
+person.name = "konj";
+console.log("person", person);
+console.log("person1", person1);
+console.log("person2", person2);
 
 // **************************************
 function vowelsAndConsonants(s) {
   console.log(s);
   console.log(s.split);
 
-  s.split('').forEach((slovo) => {
-    if (slovo === 'a') {
+  s.split("").forEach((slovo) => {
+    if (slovo === "a") {
       console.log(slovo);
-    } else if (slovo === 'e') {
+    } else if (slovo === "e") {
       console.log(slovo);
-    } else if (slovo === 'i') {
+    } else if (slovo === "i") {
       console.log(slovo);
-    } else if (slovo === 'o') {
+    } else if (slovo === "o") {
       console.log(slovo);
-    } else if (slovo === 'u') {
+    } else if (slovo === "u") {
       console.log(slovo);
     }
   });
-  s.split('').forEach((slovo) => {
+  s.split("").forEach((slovo) => {
     if (
-      slovo !== 'a' &&
-      slovo !== 'e' &&
-      slovo !== 'i' &&
-      slovo !== 'o' &&
-      slovo !== 'u'
+      slovo !== "a" &&
+      slovo !== "e" &&
+      slovo !== "i" &&
+      slovo !== "o" &&
+      slovo !== "u"
     ) {
       console.log(slovo);
     }
   });
 }
 
-vowelsAndConsonants('javascriptloops');
+vowelsAndConsonants("javascriptloops");
 
 function obrni(s) {
   try {
-    let rezultat = s.split('').reverse().join('');
+    let rezultat = s.split("").reverse().join("");
     console.log(rezultat);
   } catch {
-    console.log('error');
+    console.log("error");
     console.log(s);
   }
 }
 
-obrni(Number(123456));
+obrni(Number(1234567));
 
+let error = "nekiText";
+console.log("000a", error && "drugi text");
+console.log("000b", error || "nekitext ili text");
 
+error = 5;
+console.log("001-", error && { error, helperText: error });
+console.log("002", error || { error, helperText: error });
 
+error = true;
+console.log("003-", error && { error, helperText: error });
+console.log("004-", error || { error, helperText: error });
 
+error = false;
+console.log("005-", error && { error, helperText: error });
+console.log("006-", error || { error, helperText: error });
 
+error = undefined;
+console.log("007 - ", error && { error, helperText: error });
+console.log("008 - ", error || { error, helperText: error });
+console.log("009 - ", error || false);
 
-let error = 'nekiText'
-let varijabla = error && {error:true,helperText:error}
-console.log(error,varijabla);
+error = null;
+console.log("010 - ", error && { error, helperText: error });
+console.log("011 - ", error || { error, helperText: error });
 
-error = 5
-varijabla = error && {error:true,helperText:error}
-console.log(error,varijabla);
+error = "";
+console.log("012 - ", error && { error, helperText: error });
+console.log("013 - ", error || { error, helperText: error });
 
-error = true
-varijabla = error && {error:true,helperText:error}
-console.log(error,varijabla);
-
-error = false
-varijabla = error && {error:true,helperText:error}
-console.log('false',varijabla);
-
-error = undefined
-varijabla = error && {error:true,helperText:error}
-console.log('undefined - ',varijabla);
-
-error = null
-varijabla = error && {error:true,helperText:error}
-console.log('null - ',varijabla);
-
-
-error = true
-if(error) {
-  console.log(' - prosao sam - '+ error)
+if (true) {
+  console.log(" - prosao sam - true " + error);
 }
 
-error = 5
-if(error) {
-  console.log(' - prosao sam - '+ error)
+if (5) {
+  console.log(" - prosao sam - 5 " + error);
 }
 
-error = 'text'
-if(error) {
-  console.log(' - prosao sam - '+ error)
+if ("text") {
+  console.log(" - prosao sam - text " + error);
 } else {
-  console.log('NE prolazi', error);
+  console.log("NE prolazi", error);
 }
 
-error = null
-if(error) {
-  console.log(' - prosao sam - '+ error)
+if (null) {
+  console.log(" - prosao sam - " + error);
 } else {
-  console.log('NE prolazi', error);
+  console.log("NE prolazi null");
 }
 
-error = undefined
-if(error) {
-  console.log(' - prosao sam - '+ error)
+if (undefined) {
+  console.log(" - prosao sam - " + error);
 } else {
-  console.log('NE prolazi', error);
+  console.log("NE prolazi undefined");
 }
 
-error = false
-if(error) {
-  console.log(' - prosao sam - '+ error)
+if (false) {
+  console.log(" - prosao sam - " + error);
 } else {
-  console.log('NE prolazi', error);
+  console.log("NE prolazi false");
 }
-
